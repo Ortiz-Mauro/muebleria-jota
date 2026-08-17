@@ -12,7 +12,7 @@
         <div class="header-container">
         
             <!-- El logo iria a la izq del encabezado -->
-            <a href="index.html" class="logo-brand" aria-label="Hermanos Jota — Volver al Inicio">
+            <a href="./index.html" class="logo-brand" aria-label="Hermanos Jota — Volver al Inicio">
                 <img src="./assets/icons/logo.svg" alt="Logotipo Oficial de Hermanos Jota" width="45" height="40">
             </a>
         
@@ -21,9 +21,9 @@
                 <ul>
                     <!-- cada uno debe cambiar el 'active' en su enlace correspondiente -->
                     <li><a href="./index.html" class="nav-link active">Inicio</a></li>
-                    <li><a href="./productos.html" class="nav-link">Catálogo de Productos</a></li>
-                    <li><a href="./producto.html" class="nav-link">Detalle de Producto</a></li>
-                    <li><a href="./contacto.html" class="nav-link">Contacto</a></li>
+                    <li><a href="./pages/productos.html" class="nav-link">Catálogo de Productos</a></li>
+                    <li><a href="./pages/producto.html" class="nav-link">Detalle de Producto</a></li>
+                    <li><a href="./pages/contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
         
@@ -44,7 +44,27 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section class="hero-banner">
+            <h1>Hermanos Jota | Redescubrí el arte de vivir</h1>
+            <p>
+                En la intersección entre el optimismo del diseño de los años 60 y la conciencia ambiental del presente, creamos mobiliario concebido para perdurar.
+                Cada pieza nace de maderas nativas certificadas y acabados naturales, honrando la tradición artesanal mientras cuidamos el futuro.
+            </p>
+            <a href="./pages/productos.html" class="btn-primary">Ver Catálogo</a>
+        </section> 
+
+        <section class="featured-products">
+            <h2>Productos Destacados</h2>
+            <div class="product-grid">
+                <!-- Aquí se mostrarán los productos destacados -->
+                <article class="product-card">
+                    <img src="./assets/images/producto1.jpg" alt="Producto 1" class="product-image">
+                    <h3 class="product-title">Producto 1</h3>
+                    <p class="product-description">Descripción breve del producto 1.</p>
+                    <a href="./pages/producto.html" class="btn-secondary">Ver Detalle</a>
+                </article>
+            </div>  
+        </section>
     </main>
 </body>
 </html>
