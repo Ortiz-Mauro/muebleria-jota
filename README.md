@@ -38,10 +38,24 @@ Para que el código sea limpio, mantenible y escalable, se implementaron las sig
 
 ```text
 muebleria-jota/
-├── assets/          # Archivos multimedia (imágenes, íconos, tipografías)
-├── css/             # Hojas de estilo organizadas
-│   └── styles.css
-├── js/              # Scripts de comportamiento del cliente
+│
+├── assets/                    # Recursos estáticos
+│   ├── images/                # Fotografías y banners
+│   ├── icons/                 # Íconos vectoriales (.svg)
+│   └── fonts/                 # Tipografías locales (si aplica)
+│
+├── css/                       # Hojas de estilo en cascada
+│   ├── styles.css             # Estilos globales o de la home
+│   ├── productos.css          # (Opcional) Estilos específicos
+│   └── contacto.css           # (Opcional) Estilos específicos
+│
+├── js/                        # Lógica y scripts de JavaScript
 │   └── main.js
-├── index.html       # Página principal
-└── README.md        # Documentación del proyecto
+│
+├── pages/                     # Páginas secundarias del sitio
+│   ├── productos.html         # Catálogo general
+│   ├── producto.html          # Detalle / Ficha de producto
+│   └── contacto.html          # Formulario y datos de contacto
+│
+├── index.html                 # Punto de entrada principal (Landing/Home)
+└── README.md                  # Documentación del repositorio
