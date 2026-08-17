@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/icons/logo.svg">
+
+
+    
     <title>Hermanos Jota | Redescubrí el arte de vivir</title>
 </head>
 
@@ -43,7 +46,7 @@
         </div>
     </header>
 
-    <main>
+    <main class="site-main">
         <!-- SECCIÓN 1: Hero Banner principal (Inspiración minimalista de Apple) -->
         <section class="hero-banner">
             <div class="hero-content">
@@ -58,6 +61,7 @@
             </div>
         </section> 
 
+        <!-- Seccion 2: Productos Destacados -->
         <section class="featured-products">
             <h2>Productos Destacados</h2>
 
@@ -151,5 +155,54 @@
         </section>
 
     </main>
+
+    <footer class="site-footer">
+        
+        <div class="footer-container">
+
+            <div class="footer-col brand-info">
+                <img src="./assets/icons/logo-monocromo.svg" alt="Logotipo Isotipo de Hermanos Jota" width="35" height="30" class="footer-logo">
+                <p class="footer-tagline">
+                    Mobiliario de autor concebido bajo la filosofía del optimismo de los años 60 
+                    y el compromiso ambiental del presente. Diseñado para perdurar generaciones.
+                </p>
+            </div>
+
+            <div class="footer-col showroom-contact">
+                <h4>Showroom</h4>
+                <!-- Usamos <address> para semántica de contacto geográfico y digital -->
+                <address>
+                    <p>Av. San Juan 2847, San Cristóbal, CABA.</p>
+                    <p>Lunes a Sábados: 10:00 a 19:00 hs.</p>
+                    <p>Contacto: <a href="mailto:soporte@hermanosjota.com.ar">soporte@hermanosjota.com.ar</a></p>
+                </address>
+            </div>
+
+            <div class="footer-col social-navigation">
+                <h4>Seguinos</h4>
+                <ul class="social-links">
+                    <!-- Aplicamos target="_blank" y rel="noopener noreferrer" en cada enlace externo -->
+                    <li>
+                        <a href="https://www.instagram.com/hermanosjota" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en Instagram (se abre en una nueva pestaña)">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/hermanosjota" target="_blank" rel="noopener noreferrer" aria-label="Explorá nuestros tableros en Pinterest (se abre en una nueva pestaña)">
+                            Pinterest
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 Mueblería Hermanos Jota. Todos los derechos reservados [7].</p>
+                <p class="credits">Proyecto académico — Certificación Desarrollo Full Stack ITBA [21].</p>
+            </div>
+        </div>
+
+    </footer>
 </body>
 </html>
