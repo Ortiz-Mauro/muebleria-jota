@@ -21,8 +21,8 @@
             </a>
         
             <!-- Esto seria el menu de navegacion, iria en el centro del encabezado -->
-            <nav class="header-nav">
-                <ul>
+            <nav class="header-nav" aria-label="Navegacion principal">
+                <ul class="header-nav__list">
                     <!-- cada uno debe cambiar el 'active' en su enlace correspondiente -->
                     <li><a href="./index.html" class="nav-link active">Inicio</a></li>
                     <li><a href="./pages/productos.html" class="nav-link">Catálogo de Productos</a></li>
@@ -36,11 +36,11 @@
                 <form action="" class="search-form">
                     <label for="search-input">Buscar productos</label>
                     <input type="search" id="search-input" name="search" placeholder="Buscar...">
-                    <button type="submit" class="btn-minimalista" aria-label="Buscar">(emoji de lupa)</button>
+                    <button type="submit" class="btn-minimalista" aria-label="Buscar productos">Buscar</button>
                 </form>
 
                 <a href="#" class="cart-indicator" aria-label="Ver carrito de compras">
-                    <span class="cart-icon">(emoji de carrito)</span>
+                    <span class="cart-icon">Carrito</span>
                     <span id="cart-counter" class="cart-badge">0</span>
                 </a>
             </div>
@@ -76,7 +76,7 @@
             <div id="featured-products-container" class="product-grid">
 
                 <!-- Tarjeta de Producto 1: Sofá Patagonia -->
-                <article class="product-card">
+                <article class="product-card tarjeta-mueble">
                     <div class="product-image-container">
                         <img src="./assets/images/sofa-patagonia.png" alt="Sofá Patagonia de tres cuerpos de madera noble con cojines de plumón reciclado" class="product-image">
                     </div>
@@ -101,7 +101,7 @@
                 </article>
 
                 <!-- Tarjeta de Producto 2: Butaca Mendoza -->
-                <article class="product-card">
+                <article class="product-card tarjeta-mueble">
                     <div class="product-image-container">
                         <img src="./assets/images/butaca-mendoza.png" alt="Butaca Mendoza tapizada en bouclé Rosa Polvoriento con base giratoria de guatambú macizo" class="product-image">
                     </div>
@@ -127,7 +127,7 @@
                 </article>
 
                 <!-- Tarjeta de Producto 3: Mesa de Centro Araucaria -->
-                <article class="product-card">
+                <article class="product-card tarjeta-mueble">
                     <div class="product-image-container">
                         <img src="./assets/images/mesa-de-centro-araucaria.png" alt="Mesa de centro Araucaria con tapa circular de mármol Patagonia y base de nogal macizo" class="product-image">
                     </div>
