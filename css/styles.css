@@ -1,0 +1,258 @@
+:root {
+	--color-primary: #a0522d;
+	--color-secondary: #87a96b;
+	--color-bg: #f5e6d3;
+	--color-accent: #d4a437;
+	--color-soft: #c47a6d;
+	--color-text-main: #2c2523;
+	--color-wood-dark: #3b241c;
+	--color-white: #ffffff;
+	--color-border: #e5e5e5;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: var(--color-bg);
+	color: var(--color-text-main);
+	font-family: 'Inter', system-ui, -apple-system, sans-serif;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+}
+
+.site-header {
+	background-color: var(--color-white);
+	border-bottom: 1px solid rgb(160 82 45 / 18%);
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+.header-container {
+	align-items: center;
+	display: grid;
+	gap: 2rem;
+	grid-template-columns: minmax(5rem, 1fr) auto minmax(15rem, 1fr);
+	margin: 0 auto;
+	max-width: 1280px;
+	min-height: 5.5rem;
+	padding: 0 2rem;
+}
+
+.logo-brand {
+	align-items: center;
+	display: inline-flex;
+	justify-self: start;
+	transition: opacity 180ms ease;
+}
+
+.logo-brand:hover,
+.logo-brand:focus-visible {
+	opacity: 0.72;
+}
+
+.logo-brand img {
+	display: block;
+	height: 3rem;
+	object-fit: contain;
+	width: 3rem;
+}
+
+.header-nav__list {
+	align-items: center;
+	display: flex;
+	gap: 1.75rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.nav-link,
+.cart-indicator {
+	color: var(--color-text-main);
+	text-decoration: none;
+}
+
+.nav-link {
+	font-size: 0.8rem;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	padding: 0.5rem 0;
+	position: relative;
+	text-transform: uppercase;
+}
+
+.nav-link::after {
+	background-color: var(--color-primary);
+	bottom: 0;
+	content: "";
+	height: 2px;
+	left: 0;
+	position: absolute;
+	transform: scaleX(0);
+	transform-origin: center;
+	transition: transform 180ms ease;
+	width: 100%;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link.active::after {
+	transform: scaleX(1);
+}
+
+.header-utilities {
+	align-items: center;
+	display: flex;
+	gap: 1rem;
+	justify-self: end;
+}
+
+.search-form {
+	align-items: center;
+	display: flex;
+	gap: 0.5rem;
+	max-width: 12rem;
+}
+
+.search-form label {
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+.search-form input {
+	background: transparent;
+	border: 0;
+	color: var(--color-text-main);
+	font: inherit;
+	min-width: 0;
+	padding: 0.5rem 0;
+	width: 8rem;
+}
+
+.search-form input::placeholder {
+	color: rgb(44 37 35 / 65%);
+}
+
+.btn-minimalista {
+	background: transparent;
+	border: 0;
+	color: var(--color-primary);
+	cursor: pointer;
+	font: inherit;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	padding: 0.5rem 0;
+	text-transform: uppercase;
+}
+
+.cart-indicator {
+	align-items: center;
+	display: inline-flex;
+	font-size: 0.75rem;
+	font-weight: 700;
+	gap: 0.4rem;
+	letter-spacing: 0.06em;
+	padding: 0.5rem 0;
+	text-transform: uppercase;
+}
+
+.cart-indicator:hover,
+.cart-indicator:focus-visible,
+.btn-minimalista:hover,
+.btn-minimalista:focus-visible {
+	color: var(--color-secondary);
+}
+
+.cart-badge {
+	align-items: center;
+	background-color: var(--color-accent);
+	border-radius: 50%;
+	color: var(--color-text-main);
+	display: inline-flex;
+	font-size: 0.7rem;
+	height: 1.35rem;
+	justify-content: center;
+	min-width: 1.35rem;
+	padding: 0 0.25rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+	outline: 2px solid var(--color-secondary);
+	outline-offset: 4px;
+}
+
+.search-form input:focus-visible {
+	outline: 0;
+	box-shadow: 0 2px 0 var(--color-secondary);
+}
+
+h1 {
+	color: var(--color-wood-dark);
+}
+
+.tarjeta-mueble {
+	box-sizing: border-box;
+	background-color: #f2f2f2;
+	border: 1px solid #555555;
+	border-radius: 18px;
+	box-shadow: 0 8px 24px rgb(44 37 35 / 6%);
+	margin: 15px;
+	overflow: hidden;
+	padding: 20px;
+}
+
+@media (max-width: 768px) {
+	.header-container {
+		gap: 1rem;
+		grid-template-columns: 1fr auto;
+		min-height: auto;
+		padding: 1rem;
+	}
+
+	.header-nav {
+		grid-column: 1 / -1;
+		grid-row: 2;
+		overflow-x: auto;
+		padding-bottom: 0.25rem;
+		width: 100%;
+	}
+
+	.header-nav__list {
+		gap: 1.25rem;
+		justify-content: center;
+		min-width: max-content;
+	}
+
+	.header-utilities {
+		gap: 0.75rem;
+	}
+
+	.search-form {
+		max-width: 8rem;
+	}
+
+	.search-form input {
+		width: 4.5rem;
+	}
+
+	h1 {
+		font-size: 1.75rem;
+		letter-spacing: 0.05em;
+		line-height: 1.2;
+	}
+
+	.tarjeta-mueble {
+		margin: 15px 0;
+		width: 100%;
+	}
+}
