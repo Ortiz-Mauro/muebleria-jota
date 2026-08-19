@@ -8,10 +8,20 @@
 	--color-wood-dark: #3b241c;
 	--color-white: #ffffff;
 	--color-border: #e5e5e5;
+    
+    --font-primary: 'Inter', system-ui, sans-serif;
+    --font-secondary: 'Playfair Display', Georgia, serif;
+
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
 }
 
-* {
-	box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
