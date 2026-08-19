@@ -1,12 +1,209 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mueblería Hermanos Jota - Inicio</title>
-        <link rel="stylesheet" href="./css/global.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/icons/logo.svg">
+  
+    <!-- VÍNCULO DE ESTILOS: El puente hacia tu CSS de mañana -->
+    <link rel="stylesheet" href="./css/styles.css">
 
-    </body>
+    <title>Hermanos Jota | Redescubrí el arte de vivir</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+        
+            <!-- El logo iria a la izq del encabezado -->
+            <a href="./index.html" class="logo-brand" aria-label="Hermanos Jota — Volver al Inicio">
+                <img src="./assets/icons/logo.svg" alt="Logotipo Oficial de Hermanos Jota" width="45" height="40">
+            </a>
+        
+            <!-- Esto seria el menu de navegacion, iria en el centro del encabezado -->
+            <nav class="header-nav" aria-label="Navegacion principal">
+                <ul class="header-nav__list">
+                    <!-- cada uno debe cambiar el 'active' en su enlace correspondiente -->
+                    <li><a href="./index.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="./pages/productos.html" class="nav-link">Catálogo de Productos</a></li>
+                    <li><a href="./pages/producto.html" class="nav-link">Detalle de Producto</a></li>
+                    <li><a href="./pages/contact.html" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+        
+            <!-- Barra de búsqueda y carrito, iria a la derecha del encabezado -->
+            <div class="header-utilities">        
+                <form action="" class="search-form">
+                    <label for="search-input">Buscar productos</label>
+                    <input type="search" id="search-input" name="search" placeholder="Buscar...">
+                    <button type="submit" class="btn-minimalista" aria-label="Buscar productos">Buscar</button>
+                </form>
+
+                <a href="#" class="cart-indicator" aria-label="Ver carrito de compras">
+                    <span class="cart-icon">Carrito</span>
+                    <span id="cart-counter" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="site-main">
+        <!-- SECCIÓN 1: Hero Banner principal (Inspiración minimalista de Apple) -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1>Redescubrí el arte de vivir</h1>
+                <p class="hero-description">
+                    En la intersección entre el optimismo del diseño de los años 60 y la conciencia ambiental del presente, 
+                    creamos mobiliario de autor concebido para perdurar generaciones. Cada pieza nace de maderas nativas 
+                    certificadas FSC® y acabados orgánicos, honrando la tradición artesanal argentina.
+                </p>
+                <!-- CTA principal: Es un enlace porque nos transporta al catálogo -->
+                <a href="./pages/productos.html" class="btn-primary">Ver Catálogo</a>
+            </div>
+        </section> 
+
+        <!-- Seccion 2: Productos Destacados -->
+        <section class="featured-products">
+            <h2>Productos Destacados</h2>
+
+                <!-- 
+              Contenedor general (La Grilla). 
+              ID preparado para que JavaScript inyecte los 3-4 productos dinámicamente en el Sprint 2.
+              Por ahora, dejamos las tarjetas maquetadas en HTML para poder diseñar el CSS.
+                -->
+
+                <!-- Aca se mostrarán los productos destacados -->
+            <div id="featured-products-container" class="product-grid">
+
+                <!-- Tarjeta de Producto 1: Sofá Patagonia -->
+                <article class="product-card tarjeta-mueble">
+                    <div class="product-image-container">
+                        <img src="./assets/images/sofa-patagonia.png" alt="Sofá Patagonia de tres cuerpos de madera noble con cojines de plumón reciclado" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sofá Patagonia</h3>
+                        <p class="product-description">
+                            Líneas atemporales y calidez natural. Cojines de plumón reciclado y patas cónicas de madera que combinan el arte tradicional con el confort moderno.
+                        </p>
+                        <p class="product-price">
+                            $1.200.000
+                        </p>
+                        <div class="product-actions">
+                            <a href="./pages/producto.html" class="btn-secondary-link">Ver Detalle</a>
+                            <button type="button" 
+                                    class="btn-add-to-cart" 
+                                    data-id="sofa-patagonia" 
+                                    aria-label="Agregar Sofá Patagonia al carrito">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tarjeta de Producto 2: Butaca Mendoza -->
+                <article class="product-card tarjeta-mueble">
+                    <div class="product-image-container">
+                        <img src="./assets/images/butaca-mendoza.png" alt="Butaca Mendoza tapizada en bouclé Rosa Polvoriento con base giratoria de guatambú macizo" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Butaca Mendoza</h3>
+                        <p class="product-description">
+                            Diseño envolvente tapizado en bouclé Rosa Polvoriento con base de guatambú macizo. 
+                            Líneas orgánicas que aportan máxima calidez y ergonomía a tu espacio.
+                        </p>
+                        <p class="product-price">
+                            $450.000
+                        </p>
+                        <div class="product-actions">
+                            <a href="./pages/producto.html" class="btn-secondary-link">Ver Detalle</a>
+                            <button type="button" 
+                                    class="btn-add-to-cart" 
+                                    aria-label="Agregar Butaca Mendoza al carrito"
+                                    data-id="butaca-mendoza">
+                                Añadir al carrito
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Tarjeta de Producto 3: Mesa de Centro Araucaria -->
+                <article class="product-card tarjeta-mueble">
+                    <div class="product-image-container">
+                        <img src="./assets/images/mesa-de-centro-araucaria.png" alt="Mesa de centro Araucaria con tapa circular de mármol Patagonia y base de nogal macizo" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Mesa de Centro Araucaria</h3>
+                        <p class="product-description">
+                            Sobre circular de mármol Patagonia pulido y base en madera maciza de nogal. 
+                            Un diálogo armónico entre la solidez de la piedra y la calidez del acabado en aceite natural.
+                        </p>
+                        <p class="product-price">
+                            $680.000
+                        </p>
+                        <div class="product-actions">
+                            <a href="./pages/producto.html" class="btn-secondary-link">Ver Detalle</a>
+                            <button type="button" 
+                                    class="btn-add-to-cart" 
+                                    aria-label="Agregar Mesa de Centro Araucaria al carrito"
+                                    data-id="mesa-de-centro-araucaria">
+                                Añadir al carrito
+                            </button>
+                        </div>  
+                    </div>              
+                </article>
+
+            </div>  
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        
+        <div class="footer-container">
+
+            <div class="footer-col brand-info">
+                <img src="./assets/icons/logo-monocromo.svg" alt="Logotipo Isotipo de Hermanos Jota" width="35" height="30" class="footer-logo">
+                <p class="footer-tagline">
+                    Mobiliario de autor concebido bajo la filosofía del optimismo de los años 60 
+                    y el compromiso ambiental del presente. Diseñado para perdurar generaciones.
+                </p>
+            </div>
+
+            <div class="footer-col showroom-contact">
+                <h4>Showroom</h4>
+                <!-- Usamos <address> para semántica de contacto geográfico y digital -->
+                <address>
+                    <p>Av. San Juan 2847, San Cristóbal, CABA.</p>
+                    <p>Lunes a Sábados: 10:00 a 19:00 hs.</p>
+                    <p>Contacto: <a href="mailto:soporte@hermanosjota.com.ar">soporte@hermanosjota.com.ar</a></p>
+                </address>
+            </div>
+
+            <div class="footer-col social-navigation">
+                <h4>Seguinos</h4>
+                <ul class="social-links">
+                    <!-- Aplicamos target="_blank" y rel="noopener noreferrer" en cada enlace externo -->
+                    <li>
+                        <a href="https://www.instagram.com/hermanosjota" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en Instagram (se abre en una nueva pestaña)">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/hermanosjota" target="_blank" rel="noopener noreferrer" aria-label="Explorá nuestros tableros en Pinterest (se abre en una nueva pestaña)">
+                            Pinterest
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 Mueblería Hermanos Jota. Todos los derechos reservados [7].</p>
+                <p class="credits">Proyecto académico — Certificación Desarrollo Full Stack ITBA [21].</p>
+            </div>
+        </div>
+
+    </footer>
+</body>
 </html>
