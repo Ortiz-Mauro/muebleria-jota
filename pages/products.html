@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Catálogo de muebles de autor de Hermanos Jota.">
+    <link rel="icon" href="../assets/icons/logo.svg">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <title>Catálogo de productos | Hermanos Jota</title>
+</head>
+<body class="catalog-page">
+     <!-- Header y footer iguales -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo-brand" aria-label="Hermanos Jota — Volver al Inicio">
+                <img src="../assets/icons/logo.svg" alt="Logotipo Oficial de Hermanos Jota" width="45" height="40">
+            </a>
+
+            <nav class="header-nav" aria-label="Navegacion principal">
+                <ul class="header-nav__list">
+                    <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                    <li><a href="./products.html" class="nav-link active" aria-current="page">Catálogo de Productos</a></li>
+                    <li><a href="../product.html" class="nav-link">Detalle de Producto</a></li>
+                    <li><a href="./contact.html" class="nav-link">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-utilities">
+                <form action="" class="search-form">
+                    <label for="search-input">Buscar productos</label>
+                    <input type="search" id="search-input" name="search" placeholder="Buscar...">
+                    <button type="submit" class="btn-minimalista" aria-label="Buscar productos">Buscar</button>
+                </form>
+
+                <a href="#" class="cart-indicator" aria-label="Ver carrito de compras">
+                    <span class="cart-icon">Carrito</span>
+                    <span id="cart-counter" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="catalog">
+        <header class="catalog__header">
+            <p class="catalog__eyebrow">Colección Hermanos Jota</p>
+            <h1 class="catalog__title">Catálogo de productos</h1>
+            <p class="catalog__intro">Muebles de autor concebidos para acompañar tu manera de vivir y perdurar generaciones.</p>
+        </header>
+
+        <section class="catalog__products" aria-labelledby="catalog-products-title">
+            <div class="catalog__section-header">
+                <h2 class="catalog__section-title" id="catalog-products-title">Todas las piezas</h2>
+                <p class="catalog__count">11 productos</p>
+            </div>
+
+            <div class="catalog__grid">
+                <!-- Tarjeta de Producto 1: Sofá Patagonia -->
+                <article class="product-card">
+                    <a class="product-card__link" href="../product.html">
+                        <figure class="product-card__media">
+                            <img class="product-card__image" src="../assets/images/sofa-patagonia.png" alt="Sofá Patagonia de tres cuerpos">
+                        </figure>
+                        <div class="product-card__content">
+                            <p class="product-card__category">Living</p>
+                            <h3 class="product-card__title">Sofá Patagonia</h3>
+                            <p class="product-card__description">Confort amplio y líneas atemporales en madera noble.</p>
+                            <p class="product-card__price">$1.200.000</p>
+                        </div>
+                    </a>
+                    <button class="product-card__action" type="button" data-id="sofa-patagonia" aria-label="Agregar Sofá Patagonia al carrito">Añadir al carrito</button>
+                </article>
+                <!-- Tarjeta de Producto 2: Butaca Mendoza -->
+                <article class="product-card">
+                    <a class="product-card__link" href="../product.html">
+                        <figure class="product-card__media">
+                            <img class="product-card__image" src="../assets/images/butaca-mendoza.png" alt="Butaca Mendoza tapizada en bouclé">
+                        </figure>
+                        <div class="product-card__content">
+                            <p class="product-card__category">Living</p>
+                            <h3 class="product-card__title">Butaca Mendoza</h3>
+                            <p class="product-card__description">Diseño envolvente con base giratoria de guatambú.</p>
+                            <p class="product-card__price">$450.000</p>
+                        </div>
+                    </a>
+                    <button class="product-card__action" type="button" data-id="butaca-mendoza" aria-label="Agregar Butaca Mendoza al carrito">Añadir al carrito</button>
+                </article>
+                <!-- Tarjeta de Producto 3: Mesa de Centro Araucaria -->
+                <article class="product-card">
+                    <a class="product-card__link" href="../product.html">
+                        <figure class="product-card__media">
+                            <img class="product-card__image" src="../assets/images/mesa-de-centro-araucaria.png" alt="Mesa de centro Araucaria con tapa circular">
+                        </figure>
+                        <div class="product-card__content">
+                            <p class="product-card__category">Living</p>
+                            <h3 class="product-card__title">Mesa de Centro Araucaria</h3>
+                            <p class="product-card__description">Mármol Patagonia y nogal macizo en armonía.</p>
+                            <p class="product-card__price">$680.000</p>
+                        </div>
+                    </a>
+                    <button class="product-card__action" type="button" data-id="mesa-de-centro-araucaria" aria-label="Agregar Mesa de Centro Araucaria al carrito">Añadir al carrito</button>
+                </article>
+                <!-- Tarjeta de Producto 4: Aparador Uspallata -->
+                <article class="product-card">
+                    <a class="product-card__link" href="../product.html">
+                        <figure class="product-card__media">
+                            <img class="product-card__image" src="../assets/images/aparador-uspallata.png" alt="Aparador Uspallata de madera">
+                        </figure>
+                        <div class="product-card__content">
+                            <p class="product-card__category">Comedor</p>
+                            <h3 class="product-card__title">Aparador Uspallata</h3>
+                            <p class="product-card__description">Guardado generoso con una presencia serena y cálida.</p>
+                            <p class="product-card__price">$890.000</p>
+                        </div>
+                    </a>
+                    <button class="product-card__action" type="button" data-id="aparador-uspallata" aria-label="Agregar Aparador Uspallata al carrito">Añadir al carrito</button>
+                </article>
+                <!-- Tarjeta de Producto 5: Biblioteca Recoleta -->
+                <article class="product-card">
+                    <a class="product-card__link" href="../product.html">
+                        <figure class="product-card__media">
+                            <img class="product-card__image" src="../assets/images/biblioteca-recoleta.png" alt="Biblioteca Recoleta modular">
+                        </figure>
+                        <div class="product-card__content">
+                            <p class="product-card__category">Guardado</p>
+                            <h3 class="product-card__title">Biblioteca Recoleta</h3>
+                            <p class="product-card__description">Composición modular para ordenar y exhibir tus objetos.</p>
+                            <p class="product-card__price">$760.000</p>
+                        </div>
+                    </a>
+                    <button class="product-card__action" type="button" data-id="biblioteca-recoleta" aria-label="Agregar Biblioteca Recoleta al carrito">Añadir al carrito</button>
+                </article>
+                <!-- Tarjeta de Producto 6: Escritorio Costa -->
+                <article class="product-card">
+                    <a class="product-card__link" href="../product.html">
+                        <figure class="product-card__media">
+                            <img class="product-card__image" src="../assets/images/escritorio-costa.png" alt="Escritorio Costa de madera">
+                        </figure>
+                        <div class="product-card__content">
+                            <p class="product-card__category">Trabajo</p>
+                            <h3 class="product-card__title">Escritorio Costa</h3>
+                            <p class="product-card__description">Superficie amplia y proporciones pensadas para concentrarte.</p>
+                            <p class="product-card__price">$540.000</p>
+                        </div>
+                    </a>
+                    <button class="product-card__action" type="button" data-id="escritorio-costa" aria-label="Agregar Escritorio Costa al carrito">Añadir al carrito</button>
+                </article>
+                <!-- Tarjeta de Producto 7: Mesa de Comedor Pampa -->
+                <article class="product-card">
+                    <a class="product-card__link" href="../product.html">
+                        <figure class="product-card__media">
+                            <img class="product-card__image" src="../assets/images/mesa-comedor-pampa.png" alt="Mesa de comedor Pampa">
+                        </figure>
+                        <div class="product-card__content">
+                            <p class="product-card__category">Comedor</p>
+                            <h3 class="product-card__title">Mesa de Comedor Pampa</h3>
+                            <p class="product-card__description">Una mesa generosa para compartir todos los días.</p>
+                            <p class="product-card__price">$980.000</p>
+                        </div>
+                    </a>
+                    <button class="product-card__action" type="button" data-id="mesa-comedor-pampa" aria-label="Agregar Mesa de Comedor Pampa al carrito">Añadir al carrito</button>
+                </article>
+                <!-- Tarjeta de Producto 8: Mesa de Noche Aconcagua -->
+                <article class="product-card">
+                    <a class="product-card__link" href="../product.html">
+                        <figure class="product-card__media">
+                            <img class="product-card__image" src="../assets/images/mesa-de-noche-aconcagua.png" alt="Mesa de noche Aconcagua">
+                        </figure>
+                        <div class="product-card__content">
+                            <p class="product-card__category">Dormitorio</p>
+                            <h3 class="product-card__title">Mesa de Noche Aconcagua</h3>
+                            <p class="product-card__description">Una pieza compacta con espacio para lo esencial.</p>
+                            <p class="product-card__price">$280.000</p>
+                        </div>
+                    </a>
+                    <button class="product-card__action" type="button" data-id="mesa-de-noche-aconcagua" aria-label="Agregar Mesa de Noche Aconcagua al carrito">Añadir al carrito</button>
+                </article>
+                <!-- Tarjeta de Producto 9: Silla de Trabajo Belgrano -->
+                <article class="product-card">
+                    <a class="product-card__link" href="../product.html">
+                        <figure class="product-card__media">
+                            <img class="product-card__image" src="../assets/images/silla-de-trabajo-belgrano.png" alt="Silla de trabajo Belgrano">
+                        </figure>
+                        <div class="product-card__content">
+                            <p class="product-card__category">Trabajo</p>
+                            <h3 class="product-card__title">Silla de Trabajo Belgrano</h3>
+                            <p class="product-card__description">Ergonomía y materiales nobles para jornadas largas.</p>
+                            <p class="product-card__price">$360.000</p>
+                        </div>
+                    </a>
+                    <button class="product-card__action" type="button" data-id="silla-de-trabajo-belgrano" aria-label="Agregar Silla de Trabajo Belgrano al carrito">Añadir al carrito</button>
+                </article>
+                <!-- Tarjeta de Producto 10: Sillas Córdoba -->
+                <article class="product-card">
+                    <a class="product-card__link" href="../product.html">
+                        <figure class="product-card__media">
+                            <img class="product-card__image" src="../assets/images/sillas-cordoba.png" alt="Sillas Córdoba de comedor">
+                        </figure>
+                        <div class="product-card__content">
+                            <p class="product-card__category">Comedor</p>
+                            <h3 class="product-card__title">Sillas Córdoba</h3>
+                            <p class="product-card__description">Silueta liviana y resistencia para reunirse alrededor de la mesa.</p>
+                            <p class="product-card__price">$190.000</p>
+                        </div>
+                    </a>
+                    <button class="product-card__action" type="button" data-id="sillas-cordoba" aria-label="Agregar Sillas Córdoba al carrito">Añadir al carrito</button>
+                </article>
+                <!-- Tarjeta de Producto 11: Sillón Copacabana -->
+                <article class="product-card">
+                    <a class="product-card__link" href="../product.html">
+                        <figure class="product-card__media">
+                            <img class="product-card__image" src="../assets/images/sillon-copacabana.png" alt="Sillón Copacabana tapizado">
+                        </figure>
+                        <div class="product-card__content">
+                            <p class="product-card__category">Living</p>
+                            <h3 class="product-card__title">Sillón Copacabana</h3>
+                            <p class="product-card__description">Un refugio personal de volumen amable y tacto suave.</p>
+                            <p class="product-card__price">$620.000</p>
+                        </div>
+                    </a>
+                    <button class="product-card__action" type="button" data-id="sillon-copacabana" aria-label="Agregar Sillón Copacabana al carrito">Añadir al carrito</button>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-info">
+                <img src="../assets/icons/logo-monocromo.svg" alt="Logotipo Isotipo de Hermanos Jota" width="35" height="30" class="footer-logo">
+                <p class="footer-tagline">
+                    Mobiliario de autor concebido bajo la filosofía del optimismo de los años 60
+                    y el compromiso ambiental del presente. Diseñado para perdurar generaciones.
+                </p>
+            </div>
+
+            <div class="footer-col showroom-contact">
+                <h4>Showroom</h4>
+                <address>
+                    <p>Av. San Juan 2847, San Cristóbal, CABA.</p>
+                    <p>Lunes a Sábados: 10:00 a 19:00 hs.</p>
+                    <p>Contacto: <a href="mailto:soporte@hermanosjota.com.ar">soporte@hermanosjota.com.ar</a></p>
+                </address>
+            </div>
+
+            <div class="footer-col social-navigation">
+                <h4>Seguinos</h4>
+                <ul class="social-links">
+                    <li>
+                        <a href="https://www.instagram.com/hermanosjota" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en Instagram (se abre en una nueva pestaña)">
+                            Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.pinterest.com/hermanosjota" target="_blank" rel="noopener noreferrer" aria-label="Explorá nuestros tableros en Pinterest (se abre en una nueva pestaña)">
+                            Pinterest
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p>&copy; 2026 Mueblería Hermanos Jota. Todos los derechos reservados [7].</p>
+                <p class="credits">Proyecto académico — Certificación Desarrollo Full Stack ITBA [21].</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
