@@ -1,0 +1,125 @@
+.product-detail-page {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 2rem 1.5rem 4rem;
+}
+
+.product-detail {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "gallery summary"
+        "description description"
+        "features features";
+}
+
+.product-detail__gallery {
+    grid-area: gallery;
+    margin: 0;
+}
+
+.product-detail__image {
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgb(44 37 35 / 8%);
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.product-detail__summary {
+    grid-area: summary;
+}
+
+.product-detail__summary h1 {
+    font-family: var(--font-secondary);
+    font-size: 2.25rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+.product-detail__price {
+    color: var(--color-primary);
+    font-size: 1.75rem;
+    font-weight: var(--fw-bold);
+    margin-bottom: 1rem;
+}
+
+.product-detail__short-description {
+    margin-bottom: 1.5rem;
+}
+
+.product-detail__cta {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 10px;
+    color: var(--color-white);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: var(--fw-bold);
+    letter-spacing: 0.06em;
+    padding: 0.85rem 1.5rem;
+    text-transform: uppercase;
+    transition: background-color 180ms ease;
+}
+
+.product-detail__cta:hover,
+.product-detail__cta:focus-visible {
+    background-color: var(--color-accent);
+}
+
+.product-detail__description,
+.product-detail__features {
+    background-color: var(--color-white);
+    border: 1px solid rgb(160 82 45 / 18%);
+    border-radius: 18px;
+    padding: 1.5rem 2rem;
+}
+
+.product-detail__description {
+    grid-area: description;
+}
+
+.product-detail__features {
+    grid-area: features;
+}
+
+.product-detail__description h2,
+.product-detail__features h2 {
+    color: var(--color-primary);
+    font-family: var(--font-secondary);
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+}
+
+.product-detail__features-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.product-detail__features-list li {
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.65rem 0;
+}
+
+.product-detail__features-list li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 768px) {
+    .product-detail {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "gallery"
+            "summary"
+            "description"
+            "features";
+    }
+
+    .product-detail__summary h1 {
+        font-size: 1.75rem;
+    }
+}
