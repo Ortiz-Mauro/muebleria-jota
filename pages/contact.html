@@ -10,6 +10,39 @@
 </head>
 
 <body>
+    <header class="site-header">
+        <div class="header-container">
+        
+            <!-- El logo iria a la izq del encabezado -->
+            <a href="../index.html" class="logo-brand" aria-label="Hermanos Jota — Volver al Inicio">
+                <img src="../assets/icons/logo.svg" alt="Logotipo Oficial de Hermanos Jota" width="45" height="40">
+            </a>
+        
+            <!-- Esto seria el menu de navegacion, iria en el centro del encabezado -->
+            <nav class="header-nav" aria-label="Navegacion principal">
+                <ul class="header-nav__list">
+                    <!-- cada uno debe cambiar el 'active' en su enlace correspondiente -->
+                    <li><a href="../index.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="./pages/productos.html" class="nav-link">Catálogo de Productos</a></li>
+                    <li><a href="./pages/producto.html" class="nav-link">Detalle de Producto</a></li>
+                </ul>
+            </nav>
+        
+            <!-- Barra de búsqueda y carrito, iria a la derecha del encabezado -->
+            <div class="header-utilities">        
+                <form action="" class="search-form">
+                    <label for="search-input">Buscar productos</label>
+                    <input type="search" id="search-input" name="search" placeholder="Buscar...">
+                    <button type="submit" class="btn-minimalista" aria-label="Buscar productos">Buscar</button>
+                </form>
+
+                <a href="#" class="cart-indicator" aria-label="Ver carrito de compras">
+                    <span class="cart-icon">Carrito</span>
+                    <span id="cart-counter" class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
     <main>
         <section class="contact-section">
             <h2>Contáctanos</h2>
