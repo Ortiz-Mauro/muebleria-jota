@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto - Mueblería Hermanos Jota</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/contacto.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
                     <li><a href="../index.html" class="nav-link">Inicio</a></li>
                     <li><a href="./productos.html" class="nav-link">Catálogo de Productos</a></li>
                     <li><a href="./producto.html" class="nav-link">Detalle de Producto</a></li>
-                    <li><a href="./contact.html" class="nav-link active" aria-current="page">Contacto</a></li>
+                    <li><a href="./contacto.html" class="nav-link active" aria-current="page">Contacto</a></li>
                 </ul>
             </nav>
         
@@ -46,7 +46,7 @@
     <main>
         <section class="contact-section">
             <h2>Contáctanos</h2>
-            <form class="contact-form" action="#" method="post">
+            <form class="contact-form" action="#" method="post" novalidate>
                 <div class="form-group">
                     <label for="name">Nombre:</label>
                     <input type="text" id="name" name="name" required>
@@ -66,6 +66,8 @@
             </form>
         </section>
     </main>
+    <script src="../js/toast.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/contacto.js"></script>
 </body>
-
 </html>
