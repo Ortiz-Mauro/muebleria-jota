@@ -69,7 +69,7 @@ function createCartModal() {
                 <!-- Se inyecta con JS -->
             </div>
             <div class="cart-modal__footer">
-                <button class="btn-cta" onclick="clearCart()" style="width: 100%;">Vaciar Carrito</button>
+                <button id="clear-cart-btn" class="btn-cta cart-modal__clear">Vaciar Carrito</button>
             </div>
         </div>
     `;
@@ -78,6 +78,7 @@ function createCartModal() {
     
     document.getElementById('close-cart-btn').addEventListener('click', toggleCartModal);
     document.getElementById('cart-overlay').addEventListener('click', toggleCartModal);
+    document.getElementById('clear-cart-btn').addEventListener('click', clearCart);
 }
 
 function toggleCartModal() {
@@ -96,6 +97,8 @@ function toggleCartModal() {
 
 function renderCartItems() {
     const container = document.getElementById('cart-items-container');
+    if (!container) return;
+
     container.innerHTML = '';
     
     if (cart.length === 0) {

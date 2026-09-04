@@ -396,3 +396,6 @@ h1 {
     padding: 1.5rem;
     border-top: 1px solid var(--color-border);
 }
+.cart-modal__clear {
+    width: 100%;
+}
