@@ -21,7 +21,7 @@
                 <ul class="header-nav__list">
                     <li><a href="../index.html" class="nav-link">Inicio</a></li>
                     <li><a href="./productos.html" class="nav-link active" aria-current="page">Catálogo de Productos</a></li>
-                    <li><a href="./producto.html" class="nav-link">Detalle de Producto</a></li>
+                    <li><a href="./producto.html?id=sofa-patagonia" class="nav-link">Detalle de Producto</a></li>
                     <li><a href="./contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
@@ -51,176 +51,10 @@
         <section class="catalog__products" aria-labelledby="catalog-products-title">
             <div class="catalog__section-header">
                 <h2 class="catalog__section-title" id="catalog-products-title">Todas las piezas</h2>
-                <p class="catalog__count">11 productos</p>
+                <p class="catalog__count" id="catalog-count"></p>
             </div>
 
-            <div class="catalog__grid">
-                <!-- Tarjeta de Producto 1: Sofá Patagonia -->
-                <article class="product-card">
-                    <a class="product-card__link" href="./producto.html">
-                        <figure class="product-card__media">
-                            <img class="product-card__image" src="../assets/images/sofa-patagonia.png" alt="Sofá Patagonia de tres cuerpos">
-                        </figure>
-                        <div class="product-card__content">
-                            <p class="product-card__category">Living</p>
-                            <h3 class="product-card__title">Sofá Patagonia</h3>
-                            <p class="product-card__description">Confort amplio y líneas atemporales en madera noble.</p>
-                            <p class="product-card__price">$1.200.000</p>
-                        </div>
-                    </a>
-                    <button class="product-card__action" type="button" data-id="sofa-patagonia" aria-label="Agregar Sofá Patagonia al carrito">Añadir al carrito</button>
-                </article>
-                <!-- Tarjeta de Producto 2: Butaca Mendoza -->
-                <article class="product-card">
-                    <a class="product-card__link" href="./producto.html">
-                        <figure class="product-card__media">
-                            <img class="product-card__image" src="../assets/images/butaca-mendoza.png" alt="Butaca Mendoza tapizada en bouclé">
-                        </figure>
-                        <div class="product-card__content">
-                            <p class="product-card__category">Living</p>
-                            <h3 class="product-card__title">Butaca Mendoza</h3>
-                            <p class="product-card__description">Diseño envolvente con base giratoria de guatambú.</p>
-                            <p class="product-card__price">$450.000</p>
-                        </div>
-                    </a>
-                    <button class="product-card__action" type="button" data-id="butaca-mendoza" aria-label="Agregar Butaca Mendoza al carrito">Añadir al carrito</button>
-                </article>
-                <!-- Tarjeta de Producto 3: Mesa de Centro Araucaria -->
-                <article class="product-card">
-                    <a class="product-card__link" href="./producto.html">
-                        <figure class="product-card__media">
-                            <img class="product-card__image" src="../assets/images/mesa-de-centro-araucaria.png" alt="Mesa de centro Araucaria con tapa circular">
-                        </figure>
-                        <div class="product-card__content">
-                            <p class="product-card__category">Living</p>
-                            <h3 class="product-card__title">Mesa de Centro Araucaria</h3>
-                            <p class="product-card__description">Mármol Patagonia y nogal macizo en armonía.</p>
-                            <p class="product-card__price">$680.000</p>
-                        </div>
-                    </a>
-                    <button class="product-card__action" type="button" data-id="mesa-de-centro-araucaria" aria-label="Agregar Mesa de Centro Araucaria al carrito">Añadir al carrito</button>
-                </article>
-                <!-- Tarjeta de Producto 4: Aparador Uspallata -->
-                <article class="product-card">
-                    <a class="product-card__link" href="./producto.html">
-                        <figure class="product-card__media">
-                            <img class="product-card__image" src="../assets/images/aparador-uspallata.png" alt="Aparador Uspallata de madera">
-                        </figure>
-                        <div class="product-card__content">
-                            <p class="product-card__category">Comedor</p>
-                            <h3 class="product-card__title">Aparador Uspallata</h3>
-                            <p class="product-card__description">Guardado generoso con una presencia serena y cálida.</p>
-                            <p class="product-card__price">$890.000</p>
-                        </div>
-                    </a>
-                    <button class="product-card__action" type="button" data-id="aparador-uspallata" aria-label="Agregar Aparador Uspallata al carrito">Añadir al carrito</button>
-                </article>
-                <!-- Tarjeta de Producto 5: Biblioteca Recoleta -->
-                <article class="product-card">
-                    <a class="product-card__link" href="./producto.html">
-                        <figure class="product-card__media">
-                            <img class="product-card__image" src="../assets/images/biblioteca-recoleta.png" alt="Biblioteca Recoleta modular">
-                        </figure>
-                        <div class="product-card__content">
-                            <p class="product-card__category">Guardado</p>
-                            <h3 class="product-card__title">Biblioteca Recoleta</h3>
-                            <p class="product-card__description">Composición modular para ordenar y exhibir tus objetos.</p>
-                            <p class="product-card__price">$760.000</p>
-                        </div>
-                    </a>
-                    <button class="product-card__action" type="button" data-id="biblioteca-recoleta" aria-label="Agregar Biblioteca Recoleta al carrito">Añadir al carrito</button>
-                </article>
-                <!-- Tarjeta de Producto 6: Escritorio Costa -->
-                <article class="product-card">
-                    <a class="product-card__link" href="./producto.html">
-                        <figure class="product-card__media">
-                            <img class="product-card__image" src="../assets/images/escritorio-costa.png" alt="Escritorio Costa de madera">
-                        </figure>
-                        <div class="product-card__content">
-                            <p class="product-card__category">Trabajo</p>
-                            <h3 class="product-card__title">Escritorio Costa</h3>
-                            <p class="product-card__description">Superficie amplia y proporciones pensadas para concentrarte.</p>
-                            <p class="product-card__price">$540.000</p>
-                        </div>
-                    </a>
-                    <button class="product-card__action" type="button" data-id="escritorio-costa" aria-label="Agregar Escritorio Costa al carrito">Añadir al carrito</button>
-                </article>
-                <!-- Tarjeta de Producto 7: Mesa de Comedor Pampa -->
-                <article class="product-card">
-                    <a class="product-card__link" href="./producto.html">
-                        <figure class="product-card__media">
-                            <img class="product-card__image" src="../assets/images/mesa-comedor-pampa.png" alt="Mesa de comedor Pampa">
-                        </figure>
-                        <div class="product-card__content">
-                            <p class="product-card__category">Comedor</p>
-                            <h3 class="product-card__title">Mesa de Comedor Pampa</h3>
-                            <p class="product-card__description">Una mesa generosa para compartir todos los días.</p>
-                            <p class="product-card__price">$980.000</p>
-                        </div>
-                    </a>
-                    <button class="product-card__action" type="button" data-id="mesa-comedor-pampa" aria-label="Agregar Mesa de Comedor Pampa al carrito">Añadir al carrito</button>
-                </article>
-                <!-- Tarjeta de Producto 8: Mesa de Noche Aconcagua -->
-                <article class="product-card">
-                    <a class="product-card__link" href="./producto.html">
-                        <figure class="product-card__media">
-                            <img class="product-card__image" src="../assets/images/mesa-de-noche-aconcagua.png" alt="Mesa de noche Aconcagua">
-                        </figure>
-                        <div class="product-card__content">
-                            <p class="product-card__category">Dormitorio</p>
-                            <h3 class="product-card__title">Mesa de Noche Aconcagua</h3>
-                            <p class="product-card__description">Una pieza compacta con espacio para lo esencial.</p>
-                            <p class="product-card__price">$280.000</p>
-                        </div>
-                    </a>
-                    <button class="product-card__action" type="button" data-id="mesa-de-noche-aconcagua" aria-label="Agregar Mesa de Noche Aconcagua al carrito">Añadir al carrito</button>
-                </article>
-                <!-- Tarjeta de Producto 9: Silla de Trabajo Belgrano -->
-                <article class="product-card">
-                    <a class="product-card__link" href="./producto.html">
-                        <figure class="product-card__media">
-                            <img class="product-card__image" src="../assets/images/silla-de-trabajo-belgrano.png" alt="Silla de trabajo Belgrano">
-                        </figure>
-                        <div class="product-card__content">
-                            <p class="product-card__category">Trabajo</p>
-                            <h3 class="product-card__title">Silla de Trabajo Belgrano</h3>
-                            <p class="product-card__description">Ergonomía y materiales nobles para jornadas largas.</p>
-                            <p class="product-card__price">$360.000</p>
-                        </div>
-                    </a>
-                    <button class="product-card__action" type="button" data-id="silla-de-trabajo-belgrano" aria-label="Agregar Silla de Trabajo Belgrano al carrito">Añadir al carrito</button>
-                </article>
-                <!-- Tarjeta de Producto 10: Sillas Córdoba -->
-                <article class="product-card">
-                    <a class="product-card__link" href="./producto.html">
-                        <figure class="product-card__media">
-                            <img class="product-card__image" src="../assets/images/sillas-cordoba.png" alt="Sillas Córdoba de comedor">
-                        </figure>
-                        <div class="product-card__content">
-                            <p class="product-card__category">Comedor</p>
-                            <h3 class="product-card__title">Sillas Córdoba</h3>
-                            <p class="product-card__description">Silueta liviana y resistencia para reunirse alrededor de la mesa.</p>
-                            <p class="product-card__price">$190.000</p>
-                        </div>
-                    </a>
-                    <button class="product-card__action" type="button" data-id="sillas-cordoba" aria-label="Agregar Sillas Córdoba al carrito">Añadir al carrito</button>
-                </article>
-                <!-- Tarjeta de Producto 11: Sillón Copacabana -->
-                <article class="product-card">
-                    <a class="product-card__link" href="./producto.html">
-                        <figure class="product-card__media">
-                            <img class="product-card__image" src="../assets/images/sillon-copacabana.png" alt="Sillón Copacabana tapizado">
-                        </figure>
-                        <div class="product-card__content">
-                            <p class="product-card__category">Living</p>
-                            <h3 class="product-card__title">Sillón Copacabana</h3>
-                            <p class="product-card__description">Un refugio personal de volumen amable y tacto suave.</p>
-                            <p class="product-card__price">$620.000</p>
-                        </div>
-                    </a>
-                    <button class="product-card__action" type="button" data-id="sillon-copacabana" aria-label="Agregar Sillón Copacabana al carrito">Añadir al carrito</button>
-                </article>
-            </div>
+            <div id="catalog-grid" class="catalog__grid"></div>
         </section>
     </main>
 
@@ -268,5 +102,6 @@
     <script src="../js/cart.js"></script>
     <script src="../js/productos-data.js"></script>
     <script src="../js/productos.js"></script>
+    <script src="../js/catalogo.js"></script>
 </body>
 </html>
