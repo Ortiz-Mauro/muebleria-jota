@@ -6,7 +6,7 @@
     <link rel="icon" href="../assets/icons/logo.svg">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/producto.css">
-    <title>Sofá Patagonia — Hermanos Jota</title>
+    <title>Detalle de producto | Hermanos Jota</title>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
                 <ul class="header-nav__list">
                     <li><a href="../index.html" class="nav-link">Inicio</a></li>
                     <li><a href="./productos.html" class="nav-link">Catálogo de Productos</a></li>
-                    <li><a href="./producto.html" class="nav-link active">Detalle de Producto</a></li>
+                    <li><a href="./producto.html?id=sofa-patagonia" class="nav-link active">Detalle de Producto</a></li>
                     <li><a href="./contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
@@ -41,27 +41,21 @@
     </header>
 
     <main class="site-main product-detail-page">
-        <article class="product-detail">
+        <p id="detalle-estado" class="estado-mensaje">Cargando producto...</p>
+
+        <article class="product-detail" hidden>
             <figure class="product-detail__gallery">
-                <img
-                    src="../assets/images/sofa-patagonia.png"
-                    alt="Sofá Patagonia de tres cuerpos de madera noble con almohadones de pluma reciclada"
-                    class="product-detail__image"
-                >
+                <img alt="" class="product-detail__image">
             </figure>
 
             <div class="product-detail__summary">
-                <h1>Sofá Patagonia</h1>
-                <p class="product-detail__price">$1.200.000</p>
-                <p class="product-detail__short-description">
-                    Líneas atemporales y calidez natural. Almohadones de pluma reciclada y patas cónicas de madera
-                    que combinan el arte tradicional con el confort moderno.
-                </p>
+                <h1></h1>
+                <p class="product-detail__price"></p>
+                <p class="product-detail__short-description"></p>
                 <button
                     type="button"
                     class="btn-add-to-cart product-detail__cta"
-                    data-id="sofa-patagonia"
-                    aria-label="Agregar Sofá Patagonia al carrito"
+                    data-id=""
                 >
                     Añadir al carrito
                 </button>
@@ -69,28 +63,11 @@
 
             <section class="product-detail__description">
                 <h2>Descripción</h2>
-                <p>
-                    El Sofá Patagonia es una pieza de autor pensada para ser el centro de gravedad de tu living.
-                    Su estructura está construida en madera nativa certificada FSC® y sus almohadones utilizan pluma
-                    reciclada de alta densidad, logrando un confort profundo sin sacrificar la estética minimalista
-                    que define a Hermanos Jota.
-                </p>
-                <p>
-                    Cada unidad es terminada a mano en nuestro taller de San Cristóbal con aceites orgánicos
-                    que realzan la veta natural de la madera y la protegen para uso diario.
-                </p>
             </section>
 
             <section class="product-detail__features">
                 <h2>Características</h2>
-                <ul class="product-detail__features-list">
-                    <li><strong>Medidas:</strong> 220 × 90 × 85 cm</li>
-                    <li><strong>Estructura:</strong> madera de guatambú certificada FSC®</li>
-                    <li><strong>Tapizado:</strong> lino orgánico en tono arena</li>
-                    <li><strong>Relleno:</strong> pluma reciclada de alta densidad</li>
-                    <li><strong>Acabado:</strong> aceite de lino natural</li>
-                    <li><strong>Garantía:</strong> 10 años en estructura, 5 años en acabados</li>
-                </ul>
+                <ul class="product-detail__features-list"></ul>
             </section>
         </article>
     </main>
@@ -139,5 +116,6 @@
     <script src="../js/cart.js"></script>
     <script src="../js/productos-data.js"></script>
     <script src="../js/productos.js"></script>
+    <script src="../js/detalle.js"></script>
 </body>
 </html>
