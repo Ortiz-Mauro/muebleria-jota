@@ -399,3 +399,15 @@ h1 {
 .cart-modal__clear {
     width: 100%;
 }
+
+/* Un display propio (.product-detail es grid) le gana al atributo hidden. */
+[hidden] {
+    display: none !important;
+}
+
+.estado-mensaje {
+    color: var(--color-wood-dark);
+    grid-column: 1 / -1;
+    padding: 2rem 0;
+    text-align: center;
+}
