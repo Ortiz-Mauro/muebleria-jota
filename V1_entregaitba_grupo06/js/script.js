@@ -84,20 +84,9 @@ function isValidEmail(email) {
 }
 
 // ============================================================
-//DETALLE DE PRODUCTOS - ACORDEÓN
+// DETALLE DE PRODUCTOS - ACORDEÓN
+// (la lógica real vive en setupAccordions(), más abajo)
 // ============================================================
-
-document.querySelectorAll('.accordion-toggle').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const expanded = btn.getAttribute('aria-expanded') === 'true';
-    const panel = btn.nextElementSibling;
-    btn.setAttribute('aria-expanded', String(!expanded));
-    panel.hidden = expanded;
-  });
-});
-
-
-
 
 
 
