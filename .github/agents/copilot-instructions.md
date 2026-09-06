@@ -50,7 +50,15 @@ Toda redacción, texto simulado o etiqueta en la interfaz debe reflejar fielment
 
 ---
 
-## 6. Tokens de Diseño y Variables CSS
+## 6. Arquitectura y Buenas Prácticas en JavaScript (Sprint 2)
+- **Bajo Acoplamiento (Separación Lógica/Vista):** Manten la "Base de Datos" simulada (arrays de objetos de los muebles) completamente separada de las funciones que manipulan el DOM.
+- **Manipulación del DOM Segura:** Utiliza `document.createElement()` o métodos de inyección seguros para crear nodos HTML dinámicamente. Evita concatenaciones masivas de strings no sanitizadas (`innerHTML` peligroso).
+- **Asincronismo Realista:** Al consultar o renderizar el catálogo de productos, simula el tiempo de respuesta de un servidor real (API) envolviendo la lógica en una función `Promise` combinada con `setTimeout`, y consúmela utilizando la sintaxis moderna `async / await`.
+- **Manejo de Eventos (Event Listeners):** Toda interactividad (clics en botones, filtros, envío de formularios) debe registrarse EXCLUSIVAMENTE a través de `addEventListener` en el archivo `.js`.
+
+---
+
+## 7. Tokens de Diseño y Variables CSS
 
 ### Sistema Tipográfico y Jerarquía
  - Tipografía Primaria (Cuerpo, UI, Botones): 'Inter', system-ui, -apple-system, sans-serif;
