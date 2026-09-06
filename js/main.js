@@ -1,13 +1,16 @@
+// Obtener productos destacados
 const productosDestacados = typeof PRODUCTOS !== 'undefined'
     ? PRODUCTOS.filter(producto => producto.destacado)
     : [];
 
+// simular una llamada a un API para obtener los productos destacados
 function obtenerProductosDestacados() {
     return new Promise(resolve => {
         setTimeout(() => resolve(productosDestacados), 1000);
     });
 }
 
+// Configurar el enlace de detalle del primer producto destacado
 function configurarEnlaceDetalle() {
     const enlaceDetalle = document.querySelector('#product-detail-link');
     const productoInicial = productosDestacados[0];
@@ -74,6 +77,7 @@ function configurarBuscador() {
     });
 }
 
+// Renderizar productos destacados
 async function renderizarDestacados() {
     const contenedor = document.querySelector('#featured-products-container');
 
@@ -114,8 +118,10 @@ async function renderizarDestacados() {
         maximumFractionDigits: 0
     });
 
+    // Limpiar el contenedor antes de renderizar los productos
     contenedor.replaceChildren();
 
+    // Renderizar cada producto destacado
     productos.forEach(producto => {
         const tarjeta = document.createElement('article');
         tarjeta.className = 'product-card tarjeta-mueble';
@@ -171,6 +177,7 @@ async function renderizarDestacados() {
     });
 }
 
+// Inicializar funciones al cargar el DOM
 document.addEventListener('DOMContentLoaded', () => {
     configurarEnlaceDetalle();
     configurarBuscador();
