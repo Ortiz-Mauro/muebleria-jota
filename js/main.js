@@ -22,6 +22,7 @@ function configurarEnlaceDetalle() {
     enlaceDetalle.href = `./pages/producto.html?id=${encodeURIComponent(productoInicial.id)}`;
 }
 
+// Obtener la ruta de detalle del producto según el directorio actual
 function obtenerRutaDetalle(productId) {
     const isPagesDirectory = window.location.pathname.includes('/pages/');
     const detailPage = isPagesDirectory ? './producto.html' : './pages/producto.html';
