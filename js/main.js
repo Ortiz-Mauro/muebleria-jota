@@ -1,41 +1,6 @@
-const productosDestacados = [
-    {
-        id: 'sofa-patagonia',
-        nombre: 'Sofá Patagonia',
-        precio: 1200000,
-        descripcion: 'Líneas atemporales y calidez natural. Cojines de plumón reciclado y patas cónicas de madera que combinan el arte tradicional con el confort moderno.',
-        categoria: 'Living',
-        rutaImagen: './assets/images/sofa-patagonia.png',
-        textoAlternativo: 'Sofá Patagonia de tres cuerpos de madera noble con cojines de plumón reciclado'
-    },
-    {
-        id: 'butaca-mendoza',
-        nombre: 'Butaca Mendoza',
-        precio: 450000,
-        descripcion: 'Diseño envolvente tapizado en bouclé Rosa Polvoriento con base de guatambú macizo. Líneas orgánicas que aportan máxima calidez y ergonomía a tu espacio.',
-        categoria: 'Living',
-        rutaImagen: './assets/images/butaca-mendoza.png',
-        textoAlternativo: 'Butaca Mendoza tapizada en bouclé Rosa Polvoriento con base giratoria de guatambú macizo'
-    },
-    {
-        id: 'mesa-de-centro-araucaria',
-        nombre: 'Mesa de Centro Araucaria',
-        precio: 680000,
-        descripcion: 'Sobre circular de mármol Patagonia pulido y base en madera maciza de nogal. Un diálogo armónico entre la solidez de la piedra y la calidez del acabado en aceite natural.',
-        categoria: 'Living',
-        rutaImagen: './assets/images/mesa-de-centro-araucaria.png',
-        textoAlternativo: 'Mesa de centro Araucaria con tapa circular de mármol Patagonia y base de nogal macizo'
-    },
-    {
-        id: 'mesa-comedor-pampa',
-        nombre: 'Mesa Comedor Pampa',
-        precio: 950000,
-        descripcion: 'Mesa de comedor de madera maciza, pensada para compartir encuentros cotidianos durante generaciones.',
-        categoria: 'Comedor',
-        rutaImagen: './assets/images/mesa-comedor-pampa.png',
-        textoAlternativo: 'Mesa Comedor Pampa de madera maciza con diseño minimalista para compartir en familia'
-    }
-];
+const productosDestacados = typeof PRODUCTOS !== 'undefined'
+    ? PRODUCTOS.filter(producto => producto.destacado)
+    : [];
 
 function obtenerProductosDestacados() {
     return new Promise(resolve => {
@@ -105,8 +70,8 @@ async function renderizarDestacados() {
 
         const imagen = document.createElement('img');
         imagen.className = 'product-card__image product-image';
-        imagen.src = producto.rutaImagen;
-        imagen.alt = producto.textoAlternativo;
+        imagen.src = `./assets/images/${producto.imagen}`;
+        imagen.alt = producto.alt;
         contenedorImagen.appendChild(imagen);
 
         const contenido = document.createElement('div');
@@ -122,7 +87,7 @@ async function renderizarDestacados() {
 
         const descripcion = document.createElement('p');
         descripcion.className = 'product-card__description product-description';
-        descripcion.textContent = producto.descripcion;
+        descripcion.textContent = producto.descripcionDestacada || producto.descripcionCorta;
 
         const precio = document.createElement('p');
         precio.className = 'product-card__price product-price';
