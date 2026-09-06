@@ -1,0 +1,185 @@
+/* ============================================================
+   HERMANOS JOTA — CATÁLOGO (products-view.html)
+   Requiere base.css cargado antes (reset, tokens, header, footer).
+
+   NOTA: .hero acá se llamaba igual que el .hero de styles.css
+   (el video fullscreen de la home) pero con un diseño totalmente
+   distinto (foto lateral + texto). Se renombró a .catalog-hero
+   y sus hijos para que ambos puedan convivir sin pisarse.
+   Actualizá products-view.html con estas clases:
+     .hero            → .catalog-hero
+     .hero-photo      → .catalog-hero-photo
+     .hero-content    → .catalog-hero-content
+     .hero-label      → .catalog-hero-label
+     .hero-copy       → .catalog-hero-copy
+   ============================================================ */
+
+:root {
+  --catalog-max-width: 1440px; /* antes --max-width acá, pisaba el 1280px del header */
+  --gap-sm: 12px;
+  --gap-md: 16px;
+  --gap-lg: 40px;
+  --gap-xl: 64px;
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* ============================================================
+   MAIN / CONTENIDO
+   ============================================================ */
+.site-main {
+  max-width: var(--catalog-max-width);
+  margin: 0 auto;
+  padding: 64px 40px;
+}
+
+/* --- Hero del catálogo: foto lateral + texto + primeras cards --- */
+.catalog-hero {
+  display: flex;
+  gap: var(--gap-xl);
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.catalog-hero-photo {
+  width: 55%;
+  flex-shrink: 0;
+}
+
+.catalog-hero-photo .img-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 125%;
+}
+
+.catalog-hero-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.catalog-hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
+.catalog-hero-label {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.8px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.catalog-hero-copy {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.8px;
+  line-height: 0.9;
+  max-width: 700px;
+}
+
+.catalog-hero-copy p + p {
+  margin-top: 14px;
+}
+
+/* --- Grillas de productos --- */
+.products-grid {
+  display: grid;
+  gap: var(--gap-md);
+}
+
+.products-grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.products-grid--3col {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: var(--gap-xl);
+}
+
+.products-grid--4col {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: var(--gap-xl);
+}
+
+/* --- Card de producto --- */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.product-card .card-img-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  background: var(--sand);
+}
+
+.product-card .card-img-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card .card-name,
+.product-card .card-price {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  line-height: 1.05;
+}
+
+/* Opciones de color (estáticas, no interactivas) */
+.color-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-swatch {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.color-swatch--rust {
+  width: 21px;
+  height: 21px;
+  background: var(--terracotta);
+}
+
+.color-swatch--dark {
+  width: 22px;
+  height: 21px;
+  background: var(--espresso);
+}
+
+.color-swatch--light {
+  width: 20px;
+  height: 20px;
+  background: var(--off-white);
+  border: 1px solid var(--ink);
+}
+
+/* ============================================================
+   RESPONSIVE — específico del catálogo
+   ============================================================ */
+@media (max-width: 900px) {
+  .catalog-hero {
+    flex-direction: column;
+  }
+
+  .catalog-hero-photo {
+    width: 100%;
+  }
+}

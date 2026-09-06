@@ -1,0 +1,305 @@
+/* ============================================================
+   HERMANOS JOTA — HOME (index.html)
+   ============================================================ */
+
+/* ============================================================
+   HERO — video fullscreen de la home
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 80px 24px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--gold);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 7vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: lowercase;
+  color: var(--cream);
+}
+
+/* ============================================================
+   "¿POR QUÉ UN MUEBLE JOTA?"
+   ============================================================ */
+.why-section {
+  position: relative;
+  background: repeating-linear-gradient(
+    100deg,
+    var(--warm) 0 24px,
+    var(--sand) 24px 48px
+  );
+  padding: 80px 24px 100px;
+  overflow: hidden;
+}
+
+.curve-heading {
+  display: block;
+  width: min(700px, 100%);
+  margin: 0 auto;
+}
+
+.curve-heading text {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 44px;
+  fill: var(--rust);
+}
+
+.why-visual {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-photo {
+  width: 520px;
+  aspect-ratio: 4 / 5;
+  box-shadow: 16px 16px 0 rgba(140, 61, 44, 0.15);
+}
+
+.why-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Etiquetas flotantes */
+.tag {
+  position: absolute;
+  background: var(--cream);
+  border: 2px solid var(--rust);
+  color: var(--rust);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 22px;
+  padding: 10px 20px;
+  white-space: nowrap;
+  box-shadow: 4px 4px 0 rgba(140, 61, 44, 0.12);
+}
+
+.tag-a { top: 6%;  left: 2%;   transform: rotate(15deg); animation: floatA 4.2s ease-in-out infinite; }
+.tag-b { top: 4%;  right: 0%;  transform: rotate(-10deg); animation: floatB 3.8s ease-in-out infinite 0.5s; }
+.tag-c { bottom: 12%; left: -4%; transform: rotate(8deg); animation: floatC 4.6s ease-in-out infinite 1s; white-space: normal; max-width: 220px; text-align: center; }
+.tag-d { bottom: 18%; right: -2%; transform: rotate(-14deg); animation: floatD 3.5s ease-in-out infinite 0.2s; }
+.tag-e { bottom: -2%; left: 50%; translate: -50% 0; transform: rotate(-6deg); animation: floatE 5s ease-in-out infinite 0.8s; }
+
+@keyframes floatA { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+@keyframes floatB { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+@keyframes floatC { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+@keyframes floatD { 0%, 100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+@keyframes floatE { 0%, 100% { translate: -50% 0; } 50% { translate: -50% -9px; } }
+
+/* ============================================================
+   PRODUCTOS — categorías (home)
+   ============================================================ */
+.products-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 90px 24px;
+}
+
+.products-heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.products-heading h2 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--rust);
+}
+
+.products-heading p {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--rust);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  position: relative;
+  border: 1px solid var(--rust);
+  aspect-ratio: 305 / 418;
+  overflow: hidden;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.category-card:hover img {
+  opacity: 0.7;
+}
+
+.category-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: var(--rust);
+  opacity: 0.5;
+}
+
+/* ============================================================
+   ACABADOS — galería
+   ============================================================ */
+.finishes-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.finishes-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.finish-panel {
+  position: relative;
+  overflow: hidden;
+  height: 420px;
+}
+
+.finish-panel--wide {
+  height: 420px;
+}
+
+.finish-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.finish-panel:hover img {
+  transform: scale(1.05);
+}
+
+.finish-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 24px 16px 32px;
+  text-align: center;
+  background: linear-gradient(to top, rgba(26,15,10,0.75) 0%, transparent 100%);
+}
+
+.finish-caption p {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+
+.finish-caption a {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--cream);
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+/* ============================================================
+   RESPONSIVE — específico de la home
+   ============================================================ */
+@media (max-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-visual {
+    min-height: 420px;
+  }
+
+  .tag {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .finishes-row {
+    grid-template-columns: 1fr;
+  }
+
+  .finish-panel,
+  .finish-panel--wide {
+    height: 320px;
+  }
+
+  .tag-c,
+  .tag-d {
+    display: none;
+  }
+}
