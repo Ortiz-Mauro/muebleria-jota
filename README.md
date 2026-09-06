@@ -34,6 +34,13 @@ Para que el código sea limpio, mantenible y escalable, se implementaron las sig
 
 ---
 
+
+## 🎨 Buenas Prácticas Aplicadas
+
+Diseño ux/ui siguiendo el manual de marca. Ampliamos el manual para que la marca de hermanos j se pueda adaptar bien a medios digitales. Se amplio el design system, usos mas eficientes y visuales de la letras.Correcion de colores para cumplir con contraste accesible WCAG 2.1. Tambien se hizo un diseño preliminar en figma. Prototipo interactivo 
+https://www.figma.com/make/xKUp1AUR6TibSc218ldxuJ/Product-Landing-Page?fullscreen=1&t=JIHA3JwXgFPBYl6v-1&code-node-id=0-6
+
+
 ## 📂 Estructura del Repositorio
 
 ```text
@@ -44,18 +51,28 @@ muebleria-jota/
 │   ├── icons/                 # Íconos vectoriales (.svg)
 │   └── fonts/                 # Tipografías locales (si aplica)
 │
-├── css/                       # Hojas de estilo en cascada
-│   ├── styles.css             # Estilos globales o de la home
-│   ├── productos.css          # (Opcional) Estilos específicos
-│   └── contacto.css           # (Opcional) Estilos específicos
+├── css/                             # Hojas de estilo en cascada unific
+│   ├── Base.css                     # Compartido por TODAS las páginas: reset, tokens,header/nav,footer y toast. 
+│   ├── producto-detail.css          # DETALLE DE PRODUCTO (product-detail.html)
+│   └── contacto.css                 # formulario
+│   ├── products-view.css            # CATÁLOGO (products-view.html)
+│   └── styles.css                   # HOME (index.html)
 │
 ├── js/                        # Lógica y scripts de JavaScript
-│   └── main.js
-│
+│   └── cart.js
+│    └── catalogo.js    
+│    └── contacto.js
+│    └── detalle.js
+│    └── main.js    
+│    └──productos-data.js
+     └── productos.js    
+│    └── script.js
+│    └── toast.js
+│  
 ├── pages/                     # Páginas secundarias del sitio
 │   ├── productos.html         # Catálogo general
 │   ├── producto.html          # Detalle / Ficha de producto
 │   └── contacto.html          # Formulario y datos de contacto
-│
+├── Video                      # Video (diseñado por equipo 06)
 ├── index.html                 # Punto de entrada principal (Landing/Home)
 └── README.md                  # Documentación del repositorio
