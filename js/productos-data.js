@@ -142,7 +142,7 @@ const PRODUCTOS = [
         imagen: 'mesa-comedor-pampa.png',
         alt: 'Mesa de comedor Pampa de madera maciza para seis personas',
         descripcionCorta: 'Una mesa generosa para compartir todos los días.',
-        destacado: false,
+        destacado: true,
         descripcionLarga: [
             'La Mesa Pampa está dimensionada para seis personas sentadas cómodas y ocho cuando la ocasión lo pide. Sus patas van retiradas hacia adentro, de modo que nadie termine con una pata entre las piernas en la cabecera.',
             'El sobre es de lengüetas de madera maciza unidas una a una, un método más lento que el enchapado pero que permite lijar y reacondicionar la mesa dentro de veinte años en vez de reemplazarla.'
