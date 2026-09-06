@@ -22,6 +22,13 @@ function configurarEnlaceDetalle() {
     enlaceDetalle.href = `./pages/producto.html?id=${encodeURIComponent(productoInicial.id)}`;
 }
 
+function obtenerRutaDetalle(productId) {
+    const isPagesDirectory = window.location.pathname.includes('/pages/');
+    const detailPage = isPagesDirectory ? './producto.html' : './pages/producto.html';
+
+    return `${detailPage}?id=${encodeURIComponent(productId)}`;
+}
+
 
 // Configuracion del buscador
 function configurarBuscador() {
@@ -61,7 +68,7 @@ function configurarBuscador() {
             const elementoResultado = document.createElement('li');
             const enlaceResultado = document.createElement('a');
 
-            enlaceResultado.href = `./pages/producto.html?id=${encodeURIComponent(producto.id)}`;
+            enlaceResultado.href = obtenerRutaDetalle(producto.id);
             enlaceResultado.textContent = producto.nombre;
             enlaceResultado.setAttribute('aria-label', `Ver detalle de ${producto.nombre}`);
 
