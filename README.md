@@ -11,16 +11,6 @@ Bienvenido al repositorio de **Mueblería Jota**, un e-commerce enfocado en la e
 
 ---
 
-## 👥 Integrantes
-
-* Arrueta Rolando — [@rolo-arrueta](https://github.com/rolo-arrueta)
-* Ortiz Mauro — [@Ortiz-Mauro](https://github.com/Ortiz-Mauro)
-* Pozuelo María Leal — [@mlealpozuelo](https://github.com/mlealpozuelo)
-* Ricartes Pedro Leonel — [@ricartes123](https://github.com/ricartes123)
-* Rosendo Ivan — [@ivanros02](https://github.com/ivanros02)
-
----
-
 ## 🛠️ Stack Tecnológico
 
 El proyecto está construido utilizando la **tríada fundamental de la Web**:
@@ -51,21 +41,54 @@ muebleria-jota/
 │
 ├── assets/                    # Recursos estáticos
 │   ├── images/                # Fotografías y banners
-│   ├── icons/                 # Íconos vectoriales (.svg)
-│   └── fonts/                 # Tipografías locales (si aplica)
+│   └── icons/                 # Íconos vectoriales (.svg)
+│
+├── video/                     # Video del hero de la home
 │
 ├── css/                       # Hojas de estilo en cascada
-│   ├── styles.css             # Estilos globales o de la home
-│   ├── productos.css          # (Opcional) Estilos específicos
-│   └── contacto.css           # (Opcional) Estilos específicos
+│   ├── base.css               # Reset, tokens, header/nav y footer (compartido)
+│   ├── styles.css             # Estilos de la home
+│   ├── products-view.css      # Estilos del catálogo
+│   ├── product-detail.css     # Estilos del detalle de producto
+│   └── contacto.css           # Estilos del formulario de contacto
 │
 ├── js/                        # Lógica y scripts de JavaScript
-│   └── main.js
+│   ├── script.js               # Menú mobile (hamburguesa), compartido
+│   ├── toast.js                 # Notificaciones flotantes, compartido
+│   ├── productos-data.js        # Array de objetos con los productos + helpers
+│   ├── main.js                  # Home: renderizado dinámico de destacados
+│   ├── catalog.js               # Catálogo: renderizado dinámico de la grilla
+│   ├── product-detail.js        # Detalle: renderizado dinámico por id de la URL
+│   ├── cart.js                  # Carrito simulado (localStorage + contador)
+│   └── contacto.js              # Validación del formulario de contacto
 │
 ├── pages/                     # Páginas secundarias del sitio
-│   ├── productos.html         # Catálogo general
-│   ├── producto.html          # Detalle / Ficha de producto
+│   ├── products-view.html     # Catálogo general
+│   ├── product-detail.html    # Detalle / Ficha de producto
 │   └── contacto.html          # Formulario y datos de contacto
 │
 ├── index.html                 # Punto de entrada principal (Landing/Home)
 └── README.md                  # Documentación del repositorio
+```
+
+---
+
+## 👥 Integrantes
+
+<!-- TODO: reemplazar por el nombre completo y el link de perfil de GitHub de cada uno -->
+
+| Nombre | Usuario de GitHub |
+|---|---|
+| _Completar_ | [@ivanros02](https://github.com/ivanros02) |
+| _Completar_ | [@Mleal](https://github.com/Mleal) |
+| _Completar_ | [@Ortiz-Mauro](https://github.com/Ortiz-Mauro) |
+| _Completar_ | [@ricartes123](https://github.com/ricartes123) |
+| _Completar_ | [@rolo-arrueta](https://github.com/rolo-arrueta) |
+
+---
+
+## 🌐 Demo
+
+<!-- TODO: pegar acá el link una vez desplegado en GitHub Pages / Vercel / Netlify -->
+
+🔗 _Sitio desplegado en: (pendiente)_

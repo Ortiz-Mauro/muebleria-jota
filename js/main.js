@@ -19,13 +19,13 @@ function configurarEnlaceDetalle() {
         return;
     }
 
-    enlaceDetalle.href = `./pages/producto.html?id=${encodeURIComponent(productoInicial.id)}`;
+    enlaceDetalle.href = `./pages/product-detail.html?id=${encodeURIComponent(productoInicial.id)}`;
 }
 
 // Obtener la ruta de detalle del producto según el directorio actual
 function obtenerRutaDetalle(productId) {
     const isPagesDirectory = window.location.pathname.includes('/pages/');
-    const detailPage = isPagesDirectory ? './producto.html' : './pages/producto.html';
+    const detailPage = isPagesDirectory ? './product-detail.html' : './pages/product-detail.html';
 
     return `${detailPage}?id=${encodeURIComponent(productId)}`;
 }
@@ -167,7 +167,7 @@ async function renderizarDestacados() {
 
         const enlace = document.createElement('a');
         enlace.className = 'product-card__link btn-secondary-link';
-        enlace.href = `./pages/producto.html?id=${encodeURIComponent(producto.id)}`;
+        enlace.href = `./pages/product-detail.html?id=${encodeURIComponent(producto.id)}`;
         enlace.textContent = 'Ver Detalle';
         enlace.setAttribute('aria-label', `Ver detalle de ${producto.nombre}`);
 

@@ -1,121 +1,199 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/icons/logo.svg">
-    <link rel="stylesheet" href="./css/styles.css">
-
-    <title>Hermanos Jota | Redescubrí el arte de vivir</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hermanos Jota — JOTA 2026</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+<link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
 </head>
-
 <body>
-    <header class="site-header">
-        <div class="header-container">
-        
-            <!-- El logo iria a la izq del encabezado -->
-            <a href="./index.html" class="logo-brand" aria-label="Hermanos Jota — Volver al Inicio">
-                <img src="./assets/icons/logo.svg" alt="Logotipo Oficial de Hermanos Jota" width="45" height="40">
-            </a>
-        
-            <!-- Esto seria el menu de navegacion, iria en el centro del encabezado -->
-            <nav class="header-nav" aria-label="Navegacion principal">
-                <ul class="header-nav__list">
-                    <!-- cada uno debe cambiar el 'active' en su enlace correspondiente -->
-                    <li><a href="./index.html" class="nav-link active">Inicio</a></li>
-                    <li><a href="./pages/productos.html" class="nav-link">Catálogo de Productos</a></li>
-                    <li><a href="./pages/producto.html?id=sofa-patagonia" id="product-detail-link" class="nav-link">Detalle de Producto</a></li>
-                    <li><a href="./pages/contacto.html" class="nav-link">Contacto</a></li>
-                </ul>
-            </nav>
-        
-            <!-- Barra de búsqueda y carrito, iria a la derecha del encabezado -->
-            <div class="header-utilities">        
-                <form action="" class="search-form">
-                    <label for="search-input">Buscar productos</label>
-                    <input type="search" id="search-input" name="search" placeholder="Buscar...">
-                    <button type="submit" class="btn-minimalista" aria-label="Buscar productos">Buscar</button>
-                </form>
 
-                <a href="#" class="cart-indicator" aria-label="Ver carrito de compras">
-                    <span class="cart-icon">Carrito</span>
-                    <span id="cart-counter" class="cart-badge">0</span>
-                </a>
-            </div>
+  <!-- ============================================================
+       HEADER + NAV
+       ============================================================ -->
+
+  <header class="site-header">
+    <div class="nav-inner">
+      <div class="logo" aria-label="Hermanos Jota">
+        <a href="index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="74" viewBox="0 0 60 74" fill="none">
+<path d="M0.179001 0.0495032C4.64221 -0.0055077 8.4202 0.88127 11.9595 3.77375C14.3836 5.75415 15.9619 8.24725 16.8737 11.1947C19.6629 20.2166 13.6258 27.5682 8.92613 34.5469C7.17847 37.1413 5.51219 40.1988 4.19457 43.045C1.24476 49.4186 0.211997 56.6361 0.243893 63.6104C0.248292 64.6127 0.144906 66.0969 0.239493 67.042C0.497959 66.8725 0.463863 65.3641 0.494659 64.9879C0.907104 59.9907 1.51312 55.0628 2.97923 50.2548C5.97083 40.4386 12.3379 30.3276 22.7238 27.3009C29.7508 25.2523 37.4893 27.6375 41.4037 33.9924C42.3496 35.5294 42.8599 36.996 43.3339 38.7168C43.2075 36.7111 43.2976 34.1311 43.3009 32.0923L43.2932 19.914C44.0565 19.9261 44.8473 19.9173 45.6117 19.9063C50.3642 19.837 55.1552 19.9899 59.9043 19.8854C60.0297 26.0829 59.9538 32.6403 59.9703 38.8488C59.9824 42.8085 60.1232 46.8749 59.658 50.8148C58.204 63.1406 47.8224 73.772 35.1202 73.9392C34.7452 73.9447 32.7402 74.0284 32.5378 73.9899C32.6258 73.8017 33.7597 73.6675 34.0391 73.6279C36.9174 73.2285 39.7473 70.9632 41.3069 68.5999C43.9796 64.4796 43.2119 58.9784 43.2691 54.275C43.313 50.6388 43.2097 46.9772 43.2691 43.3311C42.1967 43.2739 40.7735 43.3124 39.6769 43.3113L33.0327 43.3091C27.7149 43.308 22.1519 43.2332 16.855 43.3388C16.7923 44.2454 16.8429 45.6834 16.8429 46.6285L16.8132 52.5289L16.7901 73.937C11.3898 73.8435 5.48249 73.8886 0.0701157 73.9481C0.0415197 72.8984 0.0514182 71.8444 0.0503184 70.7948C0.0470187 65.9186 0.0569175 61.0458 0.0701157 56.1685L0.0360203 39.1723L0.0349204 11.9836C0.0360202 8.26375 0.0107237 4.54281 0.00192483 0.822959C0.000825045 0.484091 -0.0277712 0.271748 0.179001 0.0495032Z" fill="#8C3D2C"/>
+<path d="M30.9958 53.978C35.9506 53.6403 40.2488 57.3667 40.6173 62.321C40.9857 67.2753 37.2858 71.5981 32.3354 71.9964C27.3421 72.3979 22.9768 68.6583 22.605 63.6611C22.2333 58.6639 25.9991 54.3202 30.9958 53.978Z" fill="#8C3D2C"/>
+<path d="M50.4181 0.0605332C55.1376 -0.499479 59.4116 2.8892 59.945 7.61245C60.4785 12.3368 57.0678 16.5936 52.3418 17.1008C47.6531 17.6047 43.4384 14.2248 42.9094 9.53784C42.3804 4.8509 45.7349 0.616145 50.4181 0.0605332Z" fill="#8C3D2C"/>
+</svg>
+        </a>
+      </div>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#">(Colección Brothers 2026)</a>
+        <a href="pages/products-view.html" class="dim">(Productos)</a>
+        <a href="#nosotros" class="dim">(Sobre Nosotros)</a>
+        <a href="pages/contacto.html" class="dim">(Contacto)</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="cart-indicator" aria-label="Ver carrito">
+          Carrito (<span id="cart-counter">0</span>)
+        </a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navegación mobile">
+      <a href="#">(Colección Brothers 2026)</a>
+      <a href="pages/products-view.html">(Productos)</a>
+      <a href="#nosotros">(Sobre Nosotros)</a>
+      <a href="pages/contacto.html">(Contacto)</a>
+    </nav>
+  </header>
+  <!-- ============================================================
+       HERO — 60 años, historia diseño & familia
+       ============================================================ -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="./video/videointro.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">60 años</p>
+      <h1 class="hero-title">
+        <span class="hero-title-main">historia,<br />diseño &amp; familia</span>
+      </h1>
+      <a href="pages/products-view.html" class="btn-primary">Mira la colección</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRODUCTOS DESTACADOS — cargados dinámicamente desde
+       js/productos-data.js vía js/main.js (renderizarDestacados)
+       ============================================================ -->
+  <section class="featured-section" id="destacados">
+    <div class="products-heading">
+      <h2>Destacados</h2>
+      <p>Las piezas que más eligen</p>
+    </div>
+
+    <div class="products-grid" id="featured-products-container">
+      <p class="catalog-loading">Cargando productos…</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       "¿POR QUÉ UN MUEBLE JOTA?" — texto curvo + silla + tags flotantes
+       ============================================================ -->
+  <section class="why-section">
+    <svg class="curve-heading" viewBox="0 0 700 180">
+      <defs>
+        <path id="curveArc" d="M 40,160 Q 350,10 660,160" />
+      </defs>
+      <text>
+        <textPath href="#curveArc" startOffset="50%" text-anchor="middle">
+          ¿Por qué un mueble jota?
+        </textPath>
+      </text>
+    </svg>
+
+    <div class="why-visual">
+      <span class="tag tag-a">Calidad</span>
+      <span class="tag tag-b">Durable</span>
+      <span class="tag tag-c">Materias sustentables</span>
+      <span class="tag tag-d">Clásico</span>
+      <span class="tag tag-e">Atemporal</span>
+
+      <div class="why-photo">
+        <img
+          src="assets/images/sillon-copacabana.png"
+          alt="Sillón artesanal Hermanos Jota"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRODUCTOS — categorías
+       ============================================================ -->
+  <section class="products-section" id="productos">
+    <div class="products-heading">
+      <h2>Productos</h2>
+      <p>Encontra lo que necesitas</p>
+    </div>
+
+    <div class="categories-grid">
+      <article class="category-card">
+        <img src="assets/images/sofa-patagonia.png" alt="Sillones" loading="lazy" />
+        <p class="category-name">Sillones</p>
+      </article>
+      <article class="category-card">
+        <img src="assets/images/mesa-de-centro-araucaria.png" alt="Mesas" loading="lazy" />
+        <p class="category-name">Mesas</p>
+      </article>
+      <article class="category-card">
+        <img src="assets/images/biblioteca-recoleta.png" alt="Bibliotecas" loading="lazy" />
+        <p class="category-name">Bibliotecas</p>
+      </article>
+      <article class="category-card">
+        <img src="assets/images/sillas-cordoba.png" alt="Sillas" loading="lazy" />
+        <p class="category-name">Sillas</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ACABADOS — galería de texturas de madera
+       ============================================================ -->
+  <section class="finishes-section" id="nosotros">
+    <div class="finishes-row">
+      <article class="finish-panel finish-panel--green">
+        <img src="assets/images/home2_acabado.png" alt="Textura de madera con tinte vegetal" loading="lazy" />
+        <div class="finish-caption">
+          <p>Acabado con tintes vegetales</p>
+          <a href="#">ver más</a>
         </div>
-    </header>
-
-    <main class="site-main">
-        <!-- SECCIÓN 1: Hero Banner principal (Inspiración minimalista de Apple) -->
-        <section class="hero-banner">
-            <div class="hero-content">
-                <h1>Redescubrí el arte de vivir</h1>
-                <p class="hero-description">
-                    En la intersección entre el optimismo del diseño de los años 60 y la conciencia ambiental del presente, 
-                    creamos mobiliario de autor concebido para perdurar generaciones. Cada pieza nace de maderas nativas 
-                    certificadas FSC® y acabados orgánicos, honrando la tradición artesanal argentina.
-                </p>
-                <!-- CTA principal: Es un enlace porque nos transporta al catálogo -->
-                <a href="./pages/productos.html" class="btn-primary">Ver Catálogo</a>
-            </div>
-        </section> 
-
-        <!-- Seccion 2: Productos Destacados -->
-        <section class="featured-products">
-            <h2>Productos Destacados</h2>
-            <div id="featured-products-container" class="product-grid"></div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        
-        <div class="footer-container">
-
-            <div class="footer-col brand-info">
-                <img src="./assets/icons/logo.svg" alt="Logotipo Isotipo de Hermanos Jota" width="35" height="30" class="footer-logo">
-                <p class="footer-tagline">
-                    Mobiliario de autor concebido bajo la filosofía del optimismo de los años 60 
-                    y el compromiso ambiental del presente. Diseñado para perdurar generaciones.
-                </p>
-            </div>
-
-            <div class="footer-col showroom-contact">
-                <h4>Showroom</h4>
-                <!-- Usamos <address> para semántica de contacto geográfico y digital -->
-                <address>
-                    <p>Av. San Juan 2847, San Cristóbal, CABA.</p>
-                    <p>Lunes a Viernes: 10:00 a 19:00 hs.</p>
-                    <p>Sábados: 10:00 a 14:00 hs.</p>
-                    <p>Contacto: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
-                    <p>WhatsApp: <a href="https://wa.me/541145678900">+54 11 4567-8900</a></p>
-                </address>
-            </div>
-
-            <div class="footer-col social-navigation">
-                <h4>Seguinos</h4>
-                <ul class="social-links">
-                    <!-- Aplicamos target="_blank" y rel="noopener noreferrer" en cada enlace externo -->
-                    <li>
-                        <a href="https://www.instagram.com/hermanosjota_ba" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en Instagram (se abre en una nueva pestaña)">
-                            Instagram
-                        </a>
-                    </li>
-                </ul>
-            </div>
+      </article>
+      <article class="finish-panel finish-panel--dark">
+        <img src="assets/images/home1_acabado.png" alt="Madera con aceite de lino" loading="lazy" />
+        <div class="finish-caption">
+          <p>Acabado con aceite de lino</p>
+          <a href="#">ver más</a>
         </div>
+      </article>
+    </div>
 
-        <div class="footer-bottom">
-            <div class="footer-bottom-container">
-                <p>&copy; 2026 Mueblería Hermanos Jota. Todos los derechos reservados.</p>
-                <p class="credits">Proyecto académico — Certificación Desarrollo Full Stack ITBA.</p>
-            </div>
-        </div>
+    <article class="finish-panel finish-panel--wide">
+      <img src="assets/images/home3_acabado.png" alt="Escritorio con acabado de cera de abeja" loading="lazy" />
+      <div class="finish-caption">
+        <p>Acabado con cera de abeja</p>
+        <a href="#">ver más</a>
+      </div>
+    </article>
+  </section>
 
-    </footer>
-    <script src="./js/toast.js"></script>
-    <script src="./js/cart.js"></script>
-    <script src="./js/productos-data.js"></script>
-    <script src="./js/main.js"></script>
+  <!-- ============================================================
+       FOOTER — frase + imagen + datos de contacto
+       ============================================================ -->
+ <footer class="site-footer">
+  <div class="footer-quote">
+  </div>
+  <div class="footer-bar">
+    <a href="tel:+541145678900">Tel +54 11 4567-8900</a>
+    <a href="https://maps.google.com/?q=Av.+Corrientes+1234,+Buenos+Aires" target="_blank" rel="noopener">Av. Corrientes 1234</a>
+    <a href="mailto:info@mueblesjota.com">info@mueblesjota.com</a>
+    <a href="https://www.instagram.com/emejotamuebles/?hl=es-la" target="_blank" rel="noopener">@emejotamuebles</a>
+  </div>
+</footer>
+  <script src="js/script.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/productos-data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
