@@ -61,6 +61,32 @@ async function renderizarDestacados() {
         return;
     }
 
+    if (contenedor.dataset.cartListenerConfigured !== 'true') {
+        contenedor.addEventListener('click', event => {
+            const boton = event.target.closest('.btn-add-to-cart');
+
+            if (!boton || !contenedor.contains(boton)) {
+                return;
+            }
+
+            event.stopPropagation();
+
+            const producto = productosDestacados.find(
+                productoActual => productoActual.id === boton.dataset.id
+            );
+
+            if (producto && typeof addToCart === 'function') {
+                addToCart({
+                    id: producto.id,
+                    name: producto.nombre,
+                    price: producto.precio
+                });
+            }
+        });
+
+        contenedor.dataset.cartListenerConfigured = 'true';
+    }
+
     const productos = await obtenerProductosDestacados();
     const formateadorPrecio = new Intl.NumberFormat('es-AR', {
         style: 'currency',
@@ -117,15 +143,6 @@ async function renderizarDestacados() {
         boton.dataset.id = producto.id;
         boton.setAttribute('aria-label', `Agregar ${producto.nombre} al carrito`);
         boton.textContent = 'Añadir al carrito';
-        boton.addEventListener('click', () => {
-            if (typeof addToCart === 'function') {
-                addToCart({
-                    id: producto.id,
-                    name: producto.nombre,
-                    price: producto.precio
-                });
-            }
-        });
 
         acciones.append(enlace, boton);
         contenido.append(categoria, titulo, descripcion, precio, acciones);
