@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Catálogo de muebles de autor de Hermanos Jota.">
     <link rel="icon" href="../assets/icons/logo.svg">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/productos.css">
-    <title>Catálogo de productos | Hermanos Jota</title>
+    <link rel="stylesheet" href="../css/producto.css">
+    <title>Detalle de producto | Hermanos Jota</title>
 </head>
-<body class="catalog-page">
-     <!-- Header y footer iguales -->
+
+<body>
     <header class="site-header">
         <div class="header-container">
             <a href="../index.html" class="logo-brand" aria-label="Hermanos Jota — Volver al Inicio">
@@ -20,8 +19,8 @@
             <nav class="header-nav" aria-label="Navegacion principal">
                 <ul class="header-nav__list">
                     <li><a href="../index.html" class="nav-link">Inicio</a></li>
-                    <li><a href="./productos.html" class="nav-link active" aria-current="page">Catálogo de Productos</a></li>
-                    <li><a href="./producto.html?id=sofa-patagonia" class="nav-link">Detalle de Producto</a></li>
+                    <li><a href="./productos.html" class="nav-link">Catálogo de Productos</a></li>
+                    <li><a href="./producto.html?id=sofa-patagonia" class="nav-link active">Detalle de Producto</a></li>
                     <li><a href="./contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
@@ -41,21 +40,36 @@
         </div>
     </header>
 
-    <main class="catalog">
-        <header class="catalog__header">
-            <p class="catalog__eyebrow">Colección Hermanos Jota</p>
-            <h1 class="catalog__title">Catálogo de productos</h1>
-            <p class="catalog__intro">Muebles de autor concebidos para acompañar tu manera de vivir y perdurar generaciones.</p>
-        </header>
+    <main class="site-main product-detail-page">
+        <p id="detalle-estado" class="estado-mensaje">Cargando producto...</p>
 
-        <section class="catalog__products" aria-labelledby="catalog-products-title">
-            <div class="catalog__section-header">
-                <h2 class="catalog__section-title" id="catalog-products-title">Todas las piezas</h2>
-                <p class="catalog__count" id="catalog-count"></p>
+        <article class="product-detail" hidden>
+            <figure class="product-detail__gallery">
+                <img alt="" class="product-detail__image">
+            </figure>
+
+            <div class="product-detail__summary">
+                <h1></h1>
+                <p class="product-detail__price"></p>
+                <p class="product-detail__short-description"></p>
+                <button
+                    type="button"
+                    class="btn-add-to-cart product-detail__cta"
+                    data-id=""
+                >
+                    Añadir al carrito
+                </button>
             </div>
 
-            <div id="catalog-grid" class="catalog__grid"></div>
-        </section>
+            <section class="product-detail__description">
+                <h2>Descripción</h2>
+            </section>
+
+            <section class="product-detail__features">
+                <h2>Características</h2>
+                <ul class="product-detail__features-list"></ul>
+            </section>
+        </article>
     </main>
 
     <footer class="site-footer">
@@ -102,6 +116,6 @@
     <script src="../js/cart.js"></script>
     <script src="../js/productos-data.js"></script>
     <script src="../js/productos.js"></script>
-    <script src="../js/catalogo.js"></script>
+    <script src="../js/detalle.js"></script>
 </body>
 </html>

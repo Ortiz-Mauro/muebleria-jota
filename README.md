@@ -11,6 +11,16 @@ Bienvenido al repositorio de **Mueblería Jota**, un e-commerce enfocado en la e
 
 ---
 
+## 👥 Integrantes
+
+* Arrueta Rolando — [@rolo-arrueta](https://github.com/rolo-arrueta)
+* Ortiz Mauro — [@Ortiz-Mauro](https://github.com/Ortiz-Mauro)
+* Pozuelo María Leal — [@mlealpozuelo](https://github.com/mlealpozuelo)
+* Ricartes Pedro Leonel — [@ricartes123](https://github.com/ricartes123)
+* Rosendo Ivan — [@ivanros02](https://github.com/ivanros02)
+
+---
+
 ## 🛠️ Stack Tecnológico
 
 El proyecto está construido utilizando la **tríada fundamental de la Web**:

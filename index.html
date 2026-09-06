@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/icons/logo.svg">
-  
-    <!-- VÍNCULO DE ESTILOS-->
     <link rel="stylesheet" href="./css/styles.css">
 
     <title>Hermanos Jota | Redescubrí el arte de vivir</title>
@@ -26,7 +24,7 @@
                     <!-- cada uno debe cambiar el 'active' en su enlace correspondiente -->
                     <li><a href="./index.html" class="nav-link active">Inicio</a></li>
                     <li><a href="./pages/productos.html" class="nav-link">Catálogo de Productos</a></li>
-                    <li><a href="./pages/producto.html" id="product-detail-link" class="nav-link">Detalle de Producto</a></li>
+                    <li><a href="./pages/producto.html?id=sofa-patagonia" class="nav-link">Detalle de Producto</a></li>
                     <li><a href="./pages/contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
@@ -65,10 +63,7 @@
         <!-- Seccion 2: Productos Destacados -->
         <section class="featured-products">
             <h2>Productos Destacados</h2>
-
-            <!-- Contenedor para los productos destacados -->
-            <div id="featured-products-container" class="product-grid" aria-live="polite"></div>
-        
+            <div id="featured-products-container" class="product-grid"></div>
         </section>
 
     </main>
@@ -90,8 +85,10 @@
                 <!-- Usamos <address> para semántica de contacto geográfico y digital -->
                 <address>
                     <p>Av. San Juan 2847, San Cristóbal, CABA.</p>
-                    <p>Lunes a Sábados: 10:00 a 19:00 hs.</p>
-                    <p>Contacto: <a href="mailto:soporte@hermanosjota.com.ar">soporte@hermanosjota.com.ar</a></p>
+                    <p>Lunes a Viernes: 10:00 a 19:00 hs.</p>
+                    <p>Sábados: 10:00 a 14:00 hs.</p>
+                    <p>Contacto: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
+                    <p>WhatsApp: <a href="https://wa.me/541145678900">+54 11 4567-8900</a></p>
                 </address>
             </div>
 
@@ -100,13 +97,8 @@
                 <ul class="social-links">
                     <!-- Aplicamos target="_blank" y rel="noopener noreferrer" en cada enlace externo -->
                     <li>
-                        <a href="https://www.instagram.com/hermanosjota" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en Instagram (se abre en una nueva pestaña)">
+                        <a href="https://www.instagram.com/hermanosjota_ba" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en Instagram (se abre en una nueva pestaña)">
                             Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.pinterest.com/hermanosjota" target="_blank" rel="noopener noreferrer" aria-label="Explorá nuestros tableros en Pinterest (se abre en una nueva pestaña)">
-                            Pinterest
                         </a>
                     </li>
                 </ul>
@@ -121,8 +113,10 @@
         </div>
 
     </footer>
-    <script src="./js/main.js"></script>
     <script src="./js/toast.js"></script>
     <script src="./js/cart.js"></script>
+    <script src="./js/productos-data.js"></script>
+    <script src="./js/productos.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
