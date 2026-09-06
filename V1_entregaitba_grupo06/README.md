@@ -17,7 +17,8 @@ El proyecto está construido utilizando la **tríada fundamental de la Web**:
 
 * **HTML5 Semántico**: Para garantizar accesibilidad, estructura limpia y un correcto posicionamiento SEO.
 * **CSS3 Moderno**: Utilización de variables globales (*custom properties*), Flexbox/Grid para layouts adaptativos y diseño *Responsive Web Design*.
-* **JavaScript (ES6+)**: Manipulación interactiva del DOM, captura de eventos y lógica básica de la interfaz sin librerías externas.
+* **JavaScript (ES6+)**: Manipulación interactiva del DOM, captura de eventos y lógica básica de la interfaz sin librerías externas.Z
+* * **Figma y figmamake: diseño personalizado de la web con herramientas de diseño ux/ui y dev
 
 ---
 
