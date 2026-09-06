@@ -1,0 +1,407 @@
+/* ============================================================
+   HERMANOS JOTA — JOTA 2026
+   Hoja de estilos organizada por secciones
+   ============================================================ */
+
+/* ── 1. Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── 2. Variables de diseño (tokens) ── */
+:root {
+  --cream: #fef9f3;
+  --sand: #f6e8cd;
+  --rust: #8c3d2c;
+  --terracotta: #975040;
+  --espresso: #382824;
+  --ink: #22201e;
+  --off-white: #fff5f2;
+
+  --max-width: 1440px;
+  --gap-sm: 12px;
+  --gap-md: 16px;
+  --gap-lg: 40px;
+  --gap-xl: 64px;
+}
+
+/* ── 3. Base ── */
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Inter, system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+/* ============================================================
+   4. HEADER + NAV
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 60px;
+  height: 74px;
+  position: relative;
+}
+
+.logo svg {
+  position: absolute;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.main-nav a {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: -0.55px;
+  text-transform: uppercase;
+  color: var(--rust);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.main-nav a:hover {
+  opacity: 1 !important;
+}
+
+.main-nav a.dim {
+  opacity: 0.2;
+}
+
+/* Botón hamburguesa (solo mobile) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--rust);
+}
+
+/* Menú desplegable mobile */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-nav a {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+  color: var(--rust);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   5. MAIN / CONTENIDO
+   ============================================================ */
+.site-main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 64px 40px;
+}
+
+/* --- 5.1 Sección hero: foto lateral + texto + primeras cards --- */
+.hero {
+  display: flex;
+  gap: var(--gap-xl);
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.hero-photo {
+  width: 55%;
+  flex-shrink: 0;
+}
+
+.hero-photo .img-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 125%;
+}
+
+.hero-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
+.hero-label {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.8px;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.hero-copy {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.8px;
+  line-height: 0.9;
+  max-width: 700px;
+}
+
+.hero-copy p + p {
+  margin-top: 14px;
+}
+
+/* --- 5.2 Grillas de productos --- */
+.products-grid {
+  display: grid;
+  gap: var(--gap-md);
+}
+
+.products-grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.products-grid--3col {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: var(--gap-xl);
+}
+
+.products-grid--4col {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: var(--gap-xl);
+}
+
+/* --- 5.3 Card de producto --- */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.product-card .card-img-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  background: var(--sand);
+}
+
+.product-card .card-img-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card .card-name,
+.product-card .card-price {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  line-height: 1.05;
+}
+
+/* Opciones de color (estáticas, no interactivas) */
+.color-options {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.color-swatch {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.color-swatch--rust {
+  width: 21px;
+  height: 21px;
+  background: var(--terracotta);
+}
+
+.color-swatch--dark {
+  width: 22px;
+  height: 21px;
+  background: var(--espresso);
+}
+
+.color-swatch--light {
+  width: 20px;
+  height: 20px;
+  background: var(--off-white);
+  border: 1px solid var(--ink);
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--cream);}
+
+.footer-quote {
+  background-image: url('../assets/images/footer.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* o "cover" si querés que ocupe todo el alto sin dejar espacios */
+  min-height: 400px;
+  background-color: var(--cream);
+}
+
+.footer-quote p {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.quote-highlight {
+  color: #a0522d;
+}
+
+.quote-main {
+  color: #fef9f3;
+}
+
+.footer-bar {
+  background: #f6e2c4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 16px 32px;
+  padding: 22px 24px;
+}
+
+.footer-bar a {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 18px;
+  color: #8c3d2c;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-bar a:hover {
+  opacity: 0.65;
+}
+
+@media (max-width: 640px) {
+  .footer-bar a {
+    font-size: 14px;
+  }
+}
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-visual {
+    min-height: 420px;
+  }
+
+  .tag {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-inner {
+    padding: 16px 20px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .finishes-row {
+    grid-template-columns: 1fr;
+  }
+
+  .finish-panel,
+  .finish-panel--wide {
+    height: 320px;
+  }
+
+  .footer-quote {
+    height: 320px;
+  }
+
+  .footer-bar {
+    gap: 12px 24px;
+  }
+
+  .footer-bar p {
+    font-size: 14px;
+  }
+
+  .tag-c,
+  .tag-d {
+    display: none;
+  }
+}

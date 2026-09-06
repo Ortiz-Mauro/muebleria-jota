@@ -1,0 +1,550 @@
+
+/* ── 1. Reset ── */
+/* ============================================================
+   HERMANOS JOTA — JOTA 2026
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+/* ── Tokens ── */
+:root {
+  --rust: #8c3d2c;
+  --rust-light: #a36354;
+  --cream: #fef9f3;
+  --warm: #faf1e0;
+  --gold: #d8ac4a;
+  --sand: #f6e8cd;
+  --dark: #1a0f0a;
+
+  --max-width: 1280px;
+  --font: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+}
+
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: var(--font);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--warm); }
+::-webkit-scrollbar-thumb { background: var(--rust-light); border-radius: 3px; }
+
+/* ── Botón compartido ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--rust);
+  color: var(--warm);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  padding: 16px 34px;
+  border: 1px solid var(--warm);
+  border-radius: 1px;
+  transition: background 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: var(--rust-light);
+}
+
+/* ============================================================
+   4. HEADER + NAV
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 60px;
+  height: 74px;
+  position: relative;
+}
+
+.logo svg {
+  position: absolute;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.main-nav a {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: -0.55px;
+  text-transform: uppercase;
+  color: var(--rust);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.25s ease;
+}
+
+.main-nav a:hover {
+  opacity: 0.8 !important;
+}
+
+.main-nav a.dim {
+  opacity: 0.2;
+}
+
+/* Botón hamburguesa (solo mobile) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--rust);
+}
+
+/* Menú desplegable mobile */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  border-bottom: 1px solid var(--sand);
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-nav a {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+  color: var(--rust);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 80px 24px;
+}
+
+.hero-eyebrow {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--gold);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(2.6rem, 7vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  text-transform: lowercase;
+  color: var(--cream);
+}
+
+
+/* ============================================================
+   "¿POR QUÉ UN MUEBLE JOTA?"
+   ============================================================ */
+.why-section {
+  position: relative;
+  background: repeating-linear-gradient(
+    100deg,
+    var(--warm) 0 24px,
+    var(--sand) 24px 48px
+  );
+  padding: 80px 24px 100px;
+  overflow: hidden;
+}
+
+.curve-heading {
+  display: block;
+  width: min(700px, 100%);
+  margin: 0 auto;
+}
+
+.curve-heading text {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 44px;
+  fill: var(--rust);
+}
+
+.why-visual {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.why-photo {
+  width: 520px;
+  aspect-ratio: 4 / 5;
+  box-shadow: 16px 16px 0 rgba(140, 61, 44, 0.15);
+ 
+}
+
+.why-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Etiquetas flotantes */
+.tag {
+  position: absolute;
+  background: var(--cream);
+  border: 2px solid var(--rust);
+  color: var(--rust);
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 22px;
+  padding: 10px 20px;
+  white-space: nowrap;
+  box-shadow: 4px 4px 0 rgba(140, 61, 44, 0.12);
+}
+
+.tag-a { top: 6%;  left: 2%;   transform: rotate(15deg); animation: floatA 4.2s ease-in-out infinite; }
+.tag-b { top: 4%;  right: 0%;  transform: rotate(-10deg); animation: floatB 3.8s ease-in-out infinite 0.5s; }
+.tag-c { bottom: 12%; left: -4%; transform: rotate(8deg); animation: floatC 4.6s ease-in-out infinite 1s; white-space: normal; max-width: 220px; text-align: center; }
+.tag-d { bottom: 18%; right: -2%; transform: rotate(-14deg); animation: floatD 3.5s ease-in-out infinite 0.2s; }
+.tag-e { bottom: -2%; left: 50%; translate: -50% 0; transform: rotate(-6deg); animation: floatE 5s ease-in-out infinite 0.8s; }
+
+@keyframes floatA { 0%, 100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+@keyframes floatB { 0%, 100% { translate: 0 0; } 50% { translate: 0 -6px; } }
+@keyframes floatC { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+@keyframes floatD { 0%, 100% { translate: 0 0; } 50% { translate: 0 -7px; } }
+@keyframes floatE { 0%, 100% { translate: -50% 0; } 50% { translate: -50% -9px; } }
+
+/* ============================================================
+   PRODUCTOS — categorías
+   ============================================================ */
+.products-section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 90px 24px;
+}
+
+.products-heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.products-heading h2 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--rust);
+}
+
+.products-heading p {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--rust);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  position: relative;
+  border: 1px solid var(--rust);
+  aspect-ratio: 305 / 418;
+  overflow: hidden;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.category-card:hover img {
+  opacity: 0.7;
+}
+
+.category-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: var(--rust);
+  opacity: 0.5;
+}
+
+/* ============================================================
+   ACABADOS — galería
+   ============================================================ */
+.finishes-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.finishes-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.finish-panel {
+  position: relative;
+  overflow: hidden;
+  height: 420px;
+}
+
+.finish-panel--wide {
+  height: 420px;
+}
+
+.finish-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.finish-panel:hover img {
+  transform: scale(1.05);
+}
+
+.finish-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 24px 16px 32px;
+  text-align: center;
+  background: linear-gradient(to top, rgba(26,15,10,0.75) 0%, transparent 100%);
+}
+
+.finish-caption p {
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+
+.finish-caption a {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--cream);
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--cream);}
+
+.footer-quote {
+  background-image: url('../assets/images/footer.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* o "cover" si querés que ocupe todo el alto sin dejar espacios */
+  min-height: 400px;
+  background-color: var(--cream);
+}
+
+.footer-quote p {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.quote-highlight {
+  color: #a0522d;
+}
+
+.quote-main {
+  color: #fef9f3;
+}
+
+.footer-bar {
+  background: #f6e2c4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 16px 32px;
+  padding: 22px 24px;
+}
+
+.footer-bar a {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 18px;
+  color: #8c3d2c;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-bar a:hover {
+  opacity: 0.65;
+}
+
+@media (max-width: 640px) {
+  .footer-bar a {
+    font-size: 14px;
+  }
+}
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-visual {
+    min-height: 420px;
+  }
+
+  .tag {
+    font-size: 18px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-inner {
+    padding: 16px 20px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .finishes-row {
+    grid-template-columns: 1fr;
+  }
+
+  .finish-panel,
+  .finish-panel--wide {
+    height: 320px;
+  }
+
+  .footer-quote {
+    height: 320px;
+  }
+
+  .footer-bar {
+    gap: 12px 24px;
+  }
+
+  .footer-bar p {
+    font-size: 14px;
+  }
+
+  .tag-c,
+  .tag-d {
+    display: none;
+  }
+}
