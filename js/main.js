@@ -19,6 +19,61 @@ function configurarEnlaceDetalle() {
     enlaceDetalle.href = `./pages/producto.html?id=${encodeURIComponent(productoInicial.id)}`;
 }
 
+
+// Configuracion del buscador
+function configurarBuscador() {
+    const formulario = document.querySelector('.search-form');
+    const campoBusqueda = formulario?.querySelector('input[name="search"]');
+
+    if (!formulario || !campoBusqueda) {
+        return;
+    }
+
+    const resultados = document.createElement('ul');
+    resultados.className = 'search-results';
+    resultados.setAttribute('aria-label', 'Resultados de búsqueda');
+    formulario.appendChild(resultados);
+
+    // Función para normalizar el texto y eliminar acentos
+    const normalizarTexto = texto => texto
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .toLocaleLowerCase();
+
+    const mostrarResultados = () => {
+        const termino = normalizarTexto(campoBusqueda.value.trim());
+        resultados.replaceChildren();
+
+        if (!termino) {
+            return;
+        }
+
+        const productos = typeof PRODUCTOS !== 'undefined' ? PRODUCTOS : [];
+        const coincidencias = productos.filter(producto =>
+            normalizarTexto(producto.nombre).includes(termino) ||
+            normalizarTexto(producto.categoria).includes(termino)
+        );
+
+        coincidencias.forEach(producto => {
+            const elementoResultado = document.createElement('li');
+            const enlaceResultado = document.createElement('a');
+
+            enlaceResultado.href = `./pages/producto.html?id=${encodeURIComponent(producto.id)}`;
+            enlaceResultado.textContent = producto.nombre;
+            enlaceResultado.setAttribute('aria-label', `Ver detalle de ${producto.nombre}`);
+
+            elementoResultado.appendChild(enlaceResultado);
+            resultados.appendChild(elementoResultado);
+        });
+    };
+
+    campoBusqueda.addEventListener('input', mostrarResultados);
+    formulario.addEventListener('submit', event => {
+        event.preventDefault();
+        mostrarResultados();
+    });
+}
+
 async function renderizarDestacados() {
     const contenedor = document.querySelector('#featured-products-container');
 
@@ -118,5 +173,6 @@ async function renderizarDestacados() {
 
 document.addEventListener('DOMContentLoaded', () => {
     configurarEnlaceDetalle();
+    configurarBuscador();
     renderizarDestacados();
 });
