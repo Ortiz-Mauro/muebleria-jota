@@ -86,6 +86,10 @@
     grid-area: features;
 }
 
+.product-detail__description p + p {
+    margin-top: 1rem;
+}
+
 .product-detail__description h2,
 .product-detail__features h2 {
     color: var(--color-primary);

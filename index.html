@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/icons/logo.svg">
-  
-    <!-- VÍNCULO DE ESTILOS: El puente hacia tu CSS de mañana -->
     <link rel="stylesheet" href="./css/styles.css">
 
     <title>Hermanos Jota | Redescubrí el arte de vivir</title>
@@ -26,7 +24,7 @@
                     <!-- cada uno debe cambiar el 'active' en su enlace correspondiente -->
                     <li><a href="./index.html" class="nav-link active">Inicio</a></li>
                     <li><a href="./pages/productos.html" class="nav-link">Catálogo de Productos</a></li>
-                    <li><a href="./pages/producto.html" class="nav-link">Detalle de Producto</a></li>
+                    <li><a href="./pages/producto.html?id=sofa-patagonia" class="nav-link">Detalle de Producto</a></li>
                     <li><a href="./pages/contacto.html" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
@@ -65,94 +63,7 @@
         <!-- Seccion 2: Productos Destacados -->
         <section class="featured-products">
             <h2>Productos Destacados</h2>
-
-                <!-- 
-              Contenedor general (La Grilla). 
-              ID preparado para que JavaScript inyecte los 3-4 productos dinámicamente en el Sprint 2.
-              Por ahora, dejamos las tarjetas maquetadas en HTML para poder diseñar el CSS.
-                -->
-
-                <!-- Aca se mostrarán los productos destacados -->
-            <div id="featured-products-container" class="product-grid">
-
-                <!-- Tarjeta de Producto 1: Sofá Patagonia -->
-                <article class="product-card tarjeta-mueble">
-                    <div class="product-image-container">
-                        <img src="./assets/images/sofa-patagonia.png" alt="Sofá Patagonia de tres cuerpos de madera noble con cojines de plumón reciclado" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Sofá Patagonia</h3>
-                        <p class="product-description">
-                            Líneas atemporales y calidez natural. Cojines de plumón reciclado y patas cónicas de madera que combinan el arte tradicional con el confort moderno.
-                        </p>
-                        <p class="product-price">
-                            $1.200.000
-                        </p>
-                        <div class="product-actions">
-                            <a href="./pages/producto.html" class="btn-secondary-link">Ver Detalle</a>
-                            <button type="button" 
-                                    class="btn-add-to-cart" 
-                                    data-id="sofa-patagonia" 
-                                    aria-label="Agregar Sofá Patagonia al carrito">
-                                Añadir al carrito
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Tarjeta de Producto 2: Butaca Mendoza -->
-                <article class="product-card tarjeta-mueble">
-                    <div class="product-image-container">
-                        <img src="./assets/images/butaca-mendoza.png" alt="Butaca Mendoza tapizada en bouclé Rosa Polvoriento con base giratoria de guatambú macizo" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Butaca Mendoza</h3>
-                        <p class="product-description">
-                            Diseño envolvente tapizado en bouclé Rosa Polvoriento con base de guatambú macizo. 
-                            Líneas orgánicas que aportan máxima calidez y ergonomía a tu espacio.
-                        </p>
-                        <p class="product-price">
-                            $450.000
-                        </p>
-                        <div class="product-actions">
-                            <a href="./pages/producto.html" class="btn-secondary-link">Ver Detalle</a>
-                            <button type="button" 
-                                    class="btn-add-to-cart" 
-                                    aria-label="Agregar Butaca Mendoza al carrito"
-                                    data-id="butaca-mendoza">
-                                Añadir al carrito
-                            </button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Tarjeta de Producto 3: Mesa de Centro Araucaria -->
-                <article class="product-card tarjeta-mueble">
-                    <div class="product-image-container">
-                        <img src="./assets/images/mesa-de-centro-araucaria.png" alt="Mesa de centro Araucaria con tapa circular de mármol Patagonia y base de nogal macizo" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Mesa de Centro Araucaria</h3>
-                        <p class="product-description">
-                            Sobre circular de mármol Patagonia pulido y base en madera maciza de nogal. 
-                            Un diálogo armónico entre la solidez de la piedra y la calidez del acabado en aceite natural.
-                        </p>
-                        <p class="product-price">
-                            $680.000
-                        </p>
-                        <div class="product-actions">
-                            <a href="./pages/producto.html" class="btn-secondary-link">Ver Detalle</a>
-                            <button type="button" 
-                                    class="btn-add-to-cart" 
-                                    aria-label="Agregar Mesa de Centro Araucaria al carrito"
-                                    data-id="mesa-de-centro-araucaria">
-                                Añadir al carrito
-                            </button>
-                        </div>  
-                    </div>              
-                </article>
-
-            </div>  
+            <div id="featured-products-container" class="product-grid"></div>
         </section>
 
     </main>
@@ -204,6 +115,8 @@
     </footer>
     <script src="./js/toast.js"></script>
     <script src="./js/cart.js"></script>
+    <script src="./js/productos-data.js"></script>
     <script src="./js/productos.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
