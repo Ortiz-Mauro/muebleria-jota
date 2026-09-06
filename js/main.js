@@ -37,12 +37,14 @@ const featuredProducts = [
 	}
 ];
 
+// simula una llamada a una API para obtener los productos destacados con 1 segundo de retraso
 function getFeaturedProducts() {
 	return new Promise(resolve => {
 		setTimeout(() => resolve(featuredProducts), 1000);
 	});
 }
 
+// renderiza los productos destacados en el contenedor correspondiente
 async function renderFeaturedProducts() {
 	const container = document.querySelector('#featured-products-container');
 
@@ -57,8 +59,10 @@ async function renderFeaturedProducts() {
 		maximumFractionDigits: 0
 	});
 
+    // Limpia el contenedor antes de renderizar los productos
 	container.replaceChildren();
 
+    // Itera sobre los productos y crea las tarjetas de producto dinámicamente
 	products.forEach(product => {
 		const card = document.createElement('article');
 		card.className = 'product-card';
@@ -116,6 +120,7 @@ async function renderFeaturedProducts() {
 			}
 		});
 
+        // Agrega los elementos de acción al contenedor de acciones y luego agrega todo al contenedor principal
 		actions.append(detailLink, addToCartButton);
 		content.append(category, title, description, price, actions);
 		card.append(imageContainer, content);
@@ -123,4 +128,5 @@ async function renderFeaturedProducts() {
 	});
 }
 
+// Espera a que el DOM esté completamente cargado antes de renderizar los productos destacados
 document.addEventListener('DOMContentLoaded', renderFeaturedProducts);
