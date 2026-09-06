@@ -44,6 +44,18 @@ function getFeaturedProducts() {
 	});
 }
 
+// configura el enlace del primer producto destacado en la página principal
+function configureProductDetailLink() {
+	const detailLink = document.querySelector('#product-detail-link');
+	const defaultProduct = featuredProducts[0];
+
+	if (!detailLink || !defaultProduct) {
+		return;
+	}
+
+	detailLink.href = `./pages/producto.html?id=${encodeURIComponent(defaultProduct.id)}`;
+}
+
 // renderiza los productos destacados en el contenedor correspondiente
 async function renderFeaturedProducts() {
 	const container = document.querySelector('#featured-products-container');
@@ -129,4 +141,7 @@ async function renderFeaturedProducts() {
 }
 
 // Espera a que el DOM esté completamente cargado antes de renderizar los productos destacados
-document.addEventListener('DOMContentLoaded', renderFeaturedProducts);
+document.addEventListener('DOMContentLoaded', () => {
+	configureProductDetailLink();
+	renderFeaturedProducts();
+});
