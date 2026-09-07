@@ -1,0 +1,431 @@
+/* ============================================================
+   HERMANOS JOTA — BASE.CSS
+   Compartido por TODAS las páginas: reset, tokens, header/nav,
+   footer y toast. 
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* ── 1. Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+/* ── 2. Tokens de diseño ── */
+:root {
+  /* color */
+  --rust: #8c3d2c;        /* antes también --color-accent */
+  --rust-light: #a36354;  /* tinte claro, usado en hovers suaves (ej. contacto) */
+  --rust-dark: #6f3022;   /* antes --color-accent-hover, usado en hovers oscuros (ej. carrito) */
+  --terracotta: #975040;
+  --espresso: #382824;
+  --ink: #22201e;         /* antes también --color-ink */
+  --muted: #64615e;       /* antes --color-muted, solo existía en product-detail */
+  --dark: #1a0f0a;
+  --cream: #fef9f3;
+  --ivory: #fff9f0;       /* antes --color-bg, fondo específico del detalle de producto */
+  --surface: #fbf6ee;     /* antes --color-surface */
+  --warm: #faf1e0;
+  --sand: #f6e8cd;
+  --gold: #d8ac4a;
+  --off-white: #fff5f2;
+  --border: #e5dfd8;      /* antes --color-border */
+
+  /* tipografía */
+  --font: 'Inter', system-ui, sans-serif;       /* antes también --font-sans */
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-display: 'Lora', Georgia, serif;       /* usada en el detalle de producto */
+
+  /* layout */
+  --max-width: 1280px;     /* ancho del header/nav en todo el sitio */
+  --header-h: 74px;        /* altura real del nav (antes el detalle de producto
+                               tenía 84px acá, desalineado con el header real) */
+}
+
+body {
+  background: var(--cream);
+  color: var(--dark);
+  font-family: var(--font);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--warm); }
+::-webkit-scrollbar-thumb { background: var(--rust-light); border-radius: 3px; }
+
+/* ── Botón compartido ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--rust);
+  color: var(--warm);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  padding: 16px 34px;
+  border: 1px solid var(--warm);
+  border-radius: 1px;
+  transition: background 0.25s ease;
+}
+
+.btn-primary:hover {
+  background: var(--rust-light);
+}
+
+/* ============================================================
+   HEADER + NAV — el mismo en todas las páginas
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 16px 20px;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-indicator {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.logo {
+  flex-shrink: 0;
+  width: 60px;
+  height: 74px;
+  position: relative;
+}
+
+.logo svg {
+  position: absolute;
+}
+
+/* Nav de escritorio: mobile-first, oculto por defecto y visible desde 641px (ver RESPONSIVE) */
+.main-nav {
+  display: none;
+  align-items: center;
+  gap: 32px;
+}
+
+.main-nav a {
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: -0.55px;
+  text-transform: uppercase;
+  color: var(--rust);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.25s ease;
+}
+
+.main-nav a:hover {
+  opacity: 1 !important;
+}
+
+.main-nav a.dim {
+  opacity: 0.2;
+}
+
+/* Botón hamburguesa: mobile-first, visible por defecto */
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--rust);
+}
+
+/* Menú desplegable mobile */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+}
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-nav a {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: -0.5px;
+  color: var(--rust);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   FOOTER — el mismo en todas las páginas
+   ============================================================ */
+.site-footer {
+  background: var(--cream);
+}
+
+.footer-quote {
+  background-image: url('../assets/images/footer.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 320px;
+  background-color: var(--cream);
+}
+
+.footer-quote p {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.quote-highlight {
+  color: #a0522d;
+}
+
+.quote-main {
+  color: #fef9f3;
+}
+
+.footer-bar {
+  background: #f6e2c4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 12px 24px;
+  padding: 22px 24px;
+}
+
+.footer-bar a {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 14px;
+  color: #8c3d2c;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-bar a:hover {
+  opacity: 0.65;
+}
+
+/* ============================================================
+   TOAST — usado por toast.js, disparado desde cart.js/contacto.js.
+   ============================================================ */
+#toast-container {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  pointer-events: none;
+}
+
+.toast {
+  min-width: 260px;
+  max-width: 90vw;
+  padding: 14px 26px;
+  border-radius: 4px;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.25s ease;
+}
+
+.toast-success { background-color: #3f7d4a; }
+.toast-error   { background-color: #c0392b; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-10px); }
+}
+
+/* ============================================================
+   RESPONSIVE — compartido (header y footer)
+   Mobile First: los estilos base de arriba son los de mobile;
+   acá solo se agranda para pantallas más grandes.
+   ============================================================ */
+@media (min-width: 641px) {
+  .nav-inner {
+    padding: 0 40px;
+  }
+
+  .main-nav {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .footer-bar {
+    gap: 16px 32px;
+  }
+
+  .footer-bar a,
+  .footer-bar p {
+    font-size: 18px;
+  }
+
+  .footer-quote {
+    height: auto;
+    min-height: 400px;
+  }
+}
+
+/* =========================================
+   CART MODAL (added from cart.js requirements)
+   ========================================= */
+
+.cart-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9998;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.cart-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cart-modal {
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: 100%;
+  max-width: 400px;
+  background: var(--cream);
+  color: var(--dark);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+}
+.cart-modal.hidden {
+  transform: translateX(100%);
+}
+
+.cart-modal__header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-modal__header h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--rust);
+}
+#close-cart-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  color: var(--dark);
+}
+
+.cart-modal__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+}
+.cart-empty {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 2rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.cart-item__name {
+  font-weight: bold;
+  display: block;
+}
+.cart-item__qty {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.cart-modal__footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.cart-modal__clear {
+  width: 100%;
+  padding: 1rem;
+  background: var(--rust);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background 0.2s ease;
+}
+.cart-modal__clear:hover {
+  background: var(--rust-dark);
+}

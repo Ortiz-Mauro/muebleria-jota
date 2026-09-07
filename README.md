@@ -50,31 +50,52 @@ muebleria-jota/
 │
 ├── assets/                    # Recursos estáticos
 │   ├── images/                # Fotografías y banners
-│   ├── icons/                 # Íconos vectoriales (.svg)
-│   └── fonts/                 # Tipografías locales (si aplica)
+│   └── icons/                 # Íconos vectoriales (.svg)
 │
-├── css/                             # Hojas de estilo en cascada unific
-│   ├── Base.css                     # Compartido por TODAS las páginas: reset, tokens,header/nav,footer y toast. 
-│   ├── producto-detail.css          # DETALLE DE PRODUCTO (product-detail.html)
-│   └── contacto.css                 # formulario
-│   ├── products-view.css            # CATÁLOGO (products-view.html)
-│   └── styles.css                   # HOME (index.html)
+├── video/                     # Video del hero de la home
+│
+├── css/                       # Hojas de estilo en cascada
+│   ├── base.css               # Reset, tokens, header/nav y footer (compartido)
+│   ├── styles.css             # Estilos de la home
+│   ├── products-view.css      # Estilos del catálogo
+│   ├── product-detail.css     # Estilos del detalle de producto
+│   └── contacto.css           # Estilos del formulario de contacto
 │
 ├── js/                        # Lógica y scripts de JavaScript
-│   └── cart.js
-│    └── catalogo.js    
-│    └── contacto.js
-│    └── detalle.js
-│    └── main.js    
-│    └──productos-data.js
-     └── productos.js    
-│    └── script.js
-│    └── toast.js
-│  
+│   ├── script.js               # Menú mobile (hamburguesa), compartido
+│   ├── toast.js                 # Notificaciones flotantes, compartido
+│   ├── productos-data.js        # Array de objetos con los productos + helpers
+│   ├── main.js                  # Home: renderizado dinámico de destacados
+│   ├── catalog.js               # Catálogo: renderizado dinámico de la grilla
+│   ├── product-detail.js        # Detalle: renderizado dinámico por id de la URL
+│   ├── cart.js                  # Carrito simulado (localStorage + contador)
+│   └── contacto.js              # Validación del formulario de contacto
+│
 ├── pages/                     # Páginas secundarias del sitio
-│   ├── productos.html         # Catálogo general
-│   ├── producto.html          # Detalle / Ficha de producto
+│   ├── products-view.html     # Catálogo general
+│   ├── product-detail.html    # Detalle / Ficha de producto
 │   └── contacto.html          # Formulario y datos de contacto
-├── Video                      # Video (diseñado por equipo 06)
+│
 ├── index.html                 # Punto de entrada principal (Landing/Home)
 └── README.md                  # Documentación del repositorio
+```
+
+---
+
+## 👥 Integrantes
+
+<!-- TODO: reemplazar por el nombre completo y el link de perfil de GitHub de cada uno -->
+
+| Nombre | Usuario de GitHub |
+|---|---|
+| Ivan Rosendo | [@ivanros02](https://github.com/ivanros02) |
+| Pozuelo María Leal | [@mlealpozuelo](https://github.com/mlealpozuelo) |
+| Ortiz Mauro | [@ortiz-mauro](https://github.com/ortiz-mauro) |
+| Ricartes Pedro Leonel | [@ricartes123](https://github.com/ricartes123) |
+| Arrueta Rolando | [@rolo-arrueta](https://github.com/rolo-arrueta) |
+
+---
+
+## 🌐 Demo
+
+🔗 _Sitio desplegado en: (pendiente)_
