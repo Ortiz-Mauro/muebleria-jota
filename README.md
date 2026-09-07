@@ -98,4 +98,4 @@ muebleria-jota/
 
 ## 🌐 Demo
 
-🔗 _Sitio desplegado en: (pendiente)_
+🔗 _Sitio desplegado en: https://mueblesjotagrupo06.netlify.app
