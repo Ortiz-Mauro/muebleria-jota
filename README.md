@@ -12,10 +12,8 @@ Bienvenido al repositorio de **Mueblería Jota**, un e-commerce enfocado en la e
 🔗 Repositorio: https://github.com/Ortiz-Mauro/muebleria-jota
 Código fuente del proyecto (HTML, CSS y JS).
 
-🌐 Versión visual: https://grupo06hermanosj.netlify.app/
+🌐 Versión visual y funcional: https://grupo06hermanosj.netlify.app/
 Enfocada en la propuesta estética y de diseño del sitio (home, estilos, identidad de marca).
-🌐 Versión funcional: https://mueblesjotagrupo06.netlify.app/
-Incluye más elementos de la práctica del equipo en el repositorio: catálogo dinámico, detalle de producto, carrito y formulario de contacto en funcionamiento
 
 
 ---
