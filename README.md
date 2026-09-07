@@ -34,6 +34,15 @@ Para que el código sea limpio, mantenible y escalable, se implementaron las sig
 
 ---
 
+
+## 🎨 Diseño desde el comienzo
+
+Pensamos en como hermanos jota es una empresa que viene trabajando, diseñando y acompañando a todos sus compradores en los momentos mas intimos y familiares. Respetamos el tono calido de la voz de marca y la expresamos en el diseño
+Tambien se realizo el diseño ux/ui desde cero. Ampliamos el manual para que la marca de hermanos jota se pueda adaptar bien a medios digitales. Se amplio el design system, usos mas eficientes y visuales de las tipografias.Correcion de colores para cumplir con contraste accesible WCAG 2.1. Tambien se hizo un diseño preliminar en figma. Prototipo interactivo 
+https://www.figma.com/proto/3oMkep0m5kplNLqEjuTJ7N/Web-hermanos-jota?page-id=2%3A2&node-id=22-2&viewport=416%2C209%2C0.05&t=5G1P4IEsLA5znvEx-8&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=22%3A2&hide-ui=1
+
+Ademas pensando en como comunican se agregaron 2 secciones no codeadas como "coleccion jota 2026" inspirada en el manual y catalogo compartido. Tambien se penso en una arquitectura que impulse las caracteristicas de "premium" y "familiar" añadiendo una sección "nosotros"
+
 ## 📂 Estructura del Repositorio
 
 ```text

@@ -1,0 +1,92 @@
+/* ============================================================
+   CONTACTO — usa los tokens de base.css:
+   --rust, --rust-light, --cream, --dark, --font, --font-serif
+
+   El bloque de #toast-container/.toast que estaba acá se movió
+   a base.css: toast.js también se usa en products-view.html y
+   product-detail.html.
+   ============================================================ */
+
+.contact-section {
+    width: 90%;
+    margin: 40px auto;
+    padding: 24px;
+    background-color: var(--cream);
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(140, 61, 44, 0.08);
+    border: 1px solid var(--rust);
+}
+
+.contact-section h2 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    color: var(--rust);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-family: var(--font);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--dark);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 11px 14px;
+    border: 1px solid var(--rust-light);
+    border-radius: 4px;
+    font-family: var(--font);
+    font-size: 14px;
+    color: var(--dark);
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--rust);
+    box-shadow: 0 0 0 3px rgba(140, 61, 44, 0.12);
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.btn-cta {
+    width: 100%;
+    padding: 13px;
+    background-color: var(--rust);
+    color: var(--cream);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    margin-top: 6px;
+    border-radius: 4px;
+    transition: background-color 0.25s ease;
+}
+
+.btn-cta:hover {
+    background-color: var(--rust-light);
+}
+
+@media (min-width: 768px) {
+    .contact-section {
+        max-width: 500px;
+        margin: 60px auto;
+        padding: 36px;
+    }
+}
