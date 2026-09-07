@@ -105,7 +105,11 @@ body {
   padding: 40px 0;
 }
 
-.products-grid--2col {
+/* Selector compuesto a propósito: necesita más especificidad que
+   las media queries de .products-grid de más abajo, para que esta
+   grilla (la de adentro del hero) se mantenga siempre en 2 columnas
+   sin que la sobrescriban los breakpoints de la grilla principal. */
+.products-grid.products-grid--2col {
   grid-template-columns: repeat(2, 1fr);
 }
 

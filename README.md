@@ -79,16 +79,14 @@ muebleria-jota/
 
 | Nombre | Usuario de GitHub |
 |---|---|
-| _Completar_ | [@ivanros02](https://github.com/ivanros02) |
-| _Completar_ | [@Mleal](https://github.com/Mleal) |
-| _Completar_ | [@Ortiz-Mauro](https://github.com/Ortiz-Mauro) |
-| _Completar_ | [@ricartes123](https://github.com/ricartes123) |
-| _Completar_ | [@rolo-arrueta](https://github.com/rolo-arrueta) |
+| Ivan Rosendo | [@ivanros02](https://github.com/ivanros02) |
+| Pozuelo María Leal | [@mlealpozuelo](https://github.com/mlealpozuelo) |
+| Ortiz Mauro | [@ortiz-mauro](https://github.com/ortiz-mauro) |
+| Ricartes Pedro Leonel | [@ricartes123](https://github.com/ricartes123) |
+| Arrueta Rolando | [@rolo-arrueta](https://github.com/rolo-arrueta) |
 
 ---
 
 ## 🌐 Demo
-
-<!-- TODO: pegar acá el link una vez desplegado en GitHub Pages / Vercel / Netlify -->
 
 🔗 _Sitio desplegado en: (pendiente)_

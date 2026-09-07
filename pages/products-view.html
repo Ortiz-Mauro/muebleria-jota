@@ -82,14 +82,16 @@
           </div>
         </div>
 
+        <!-- Primeras 4 cards: se llenan dinámicamente por js/catalog.js -->
+        <div class="products-grid products-grid--2col" id="catalog-grid-featured">
+          <p class="catalog-loading">Cargando productos…</p>
+        </div>
       </div>
     </section>
 
-    <!-- Grilla de productos: se llena dinámicamente por js/catalog.js
+    <!-- Resto del catálogo: se llena dinámicamente por js/catalog.js
          a partir del array PRODUCTOS (productos-data.js) -->
-    <div class="products-grid" id="catalog-grid">
-      <p class="catalog-loading">Cargando productos…</p>
-    </div>
+    <div class="products-grid" id="catalog-grid"></div>
 
   </main>
 
