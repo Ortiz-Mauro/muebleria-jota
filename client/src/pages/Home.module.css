@@ -1,0 +1,10 @@
+.title {
+  font-family: var(--font-serif);
+  color: var(--rust);
+}
+
+.catalogGrid {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+}
