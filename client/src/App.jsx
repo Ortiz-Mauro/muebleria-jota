@@ -17,6 +17,7 @@ export const App = () => {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/productos" element={<Home />} />
             <Route path="/contacto" element={<Contacto />} />
           </Routes>
         </main>

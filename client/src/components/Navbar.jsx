@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './Navbar.module.css';
 
 export const Navbar = ({ cartCount = 0 }) => {
@@ -19,10 +19,29 @@ export const Navbar = ({ cartCount = 0 }) => {
         </div>
 
         <nav className={styles.mainNav} aria-label="Navegación principal">
-          <Link to="/">(Colección Brothers 2026)</Link>
-          <Link to="/" className={styles.dim}>(Productos)</Link>
-          <Link to="/" className={styles.dim}>(Sobre Nosotros)</Link>
-          <Link to="/contacto" className={styles.dim}>(Contacto)</Link>
+          <NavLink 
+            to="/" 
+            end 
+            className={({ isActive }) => (isActive ? '' : styles.dim)}
+          >
+            (Colección Brothers 2026)
+          </NavLink>
+          
+          <NavLink 
+            to="/productos" 
+            className={({ isActive }) => (isActive ? '' : styles.dim)}
+          >
+            (Productos)
+          </NavLink>
+          
+          <Link to="#" className={styles.dim}>(Sobre Nosotros)</Link>
+          
+          <NavLink 
+            to="/contacto" 
+            className={({ isActive }) => (isActive ? '' : styles.dim)}
+          >
+            (Contacto)
+          </NavLink>
         </nav>
 
         <div className={styles.navActions}>
@@ -40,10 +59,10 @@ export const Navbar = ({ cartCount = 0 }) => {
       </div>
 
       <nav className={`${styles.mobileNav} ${isMobileOpen ? styles.open : ''}`} aria-label="Navegación mobile">
-        <Link to="/" onClick={() => setIsMobileOpen(false)}>(Colección Brothers 2026)</Link>
-        <Link to="/" onClick={() => setIsMobileOpen(false)}>(Productos)</Link>
-        <Link to="/" onClick={() => setIsMobileOpen(false)}>(Sobre Nosotros)</Link>
-        <Link to="/contacto" onClick={() => setIsMobileOpen(false)}>(Contacto)</Link>
+        <NavLink to="/" end onClick={() => setIsMobileOpen(false)}>(Colección Brothers 2026)</NavLink>
+        <NavLink to="/productos" onClick={() => setIsMobileOpen(false)}>(Productos)</NavLink>
+        <Link to="#" onClick={() => setIsMobileOpen(false)}>(Sobre Nosotros)</Link>
+        <NavLink to="/contacto" onClick={() => setIsMobileOpen(false)}>(Contacto)</NavLink>
       </nav>
     </header>
   );
