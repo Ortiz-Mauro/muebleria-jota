@@ -1,0 +1,99 @@
+.title {
+  font-family: var(--font-serif);
+  color: var(--rust);
+}
+
+.catalogGrid {
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--border) 72%, white);
+  border-radius: 8px;
+  background: var(--cream);
+  box-shadow: 0 3px 12px rgb(51 45 41 / 6%);
+}
+
+.detailImage {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--warm);
+}
+
+.detailInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.detailTitle {
+  margin: 0 0 0.75rem;
+  color: var(--rust);
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.detailDescription {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.detailPrice {
+  margin: 1rem 0;
+  color: var(--rust-dark);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.detailActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+
+.addButton,
+.removeButton {
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.addButton {
+  background: var(--rust);
+  color: #fff;
+}
+
+.removeButton {
+  background: transparent;
+  color: var(--rust-dark);
+  border-color: var(--border);
+}
+
+@media (max-width: 720px) {
+  .detail {
+    grid-template-columns: 1fr;
+  }
+
+  .detailImage {
+    height: 220px;
+  }
+}

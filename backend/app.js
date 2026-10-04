@@ -15,8 +15,8 @@ app.get("/", (req, res) => {
   res.status(200).json({ mensaje: "API de Mueblería Hermanos Jota funcionando" });
 });
 
-// Acá se montarán las rutas de productos, por ejemplo:
-// app.use("/api/productos", productosRouter);
+// Monta las rutas de productos bajo el prefijo de la API.
+app.use("/api/products", require("./routes/products.routes"));
 
 app.use(notFound);
 app.use(errorHandler);
