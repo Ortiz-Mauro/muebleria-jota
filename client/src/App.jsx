@@ -7,17 +7,46 @@ import { Contacto } from './pages/Contacto';
 import './App.css';
 
 export const App = () => {
-  const [cartCount, setCartCount] = useState(0);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
+
+  const removeFromCart = (product) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== product.id));
+  };
 
   return (
     <Router>
       <div className="app-layout">
-        <Navbar cartCount={cartCount} />
+        <Navbar cartCount={cart.length} />
         
         <main className="main-content">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/productos" element={<Home />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  selectedProduct={selectedProduct}
+                  onSelectProduct={setSelectedProduct}
+                  onAddToCart={addToCart}
+                  onRemoveFromCart={removeFromCart}
+                />
+              }
+            />
+            <Route
+              path="/productos"
+              element={
+                <Home
+                  selectedProduct={selectedProduct}
+                  onSelectProduct={setSelectedProduct}
+                  onAddToCart={addToCart}
+                  onRemoveFromCart={removeFromCart}
+                />
+              }
+            />
             <Route path="/contacto" element={<Contacto />} />
           </Routes>
         </main>
