@@ -3,6 +3,7 @@
   min-width: 0;
   flex-direction: column;
   overflow: hidden;
+  cursor: pointer;
   border: 1px solid color-mix(in srgb, var(--border) 72%, white);
   border-radius: 8px;
   background: var(--cream);
