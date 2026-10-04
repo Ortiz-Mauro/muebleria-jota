@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ProductCard } from './ProductCard';
 import styles from './ProductList.module.css';
 
-export const ProductList = () => {
+export const ProductList = ({ onSelectProduct }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -50,7 +50,11 @@ export const ProductList = () => {
   return (
     <section className={styles.grid} aria-label="Productos">
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard
+          key={product.id}
+          product={product}
+          onSelectProduct={onSelectProduct}
+        />
       ))}
     </section>
   );
