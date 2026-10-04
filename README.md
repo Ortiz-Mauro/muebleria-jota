@@ -1,92 +1,14 @@
-# 🪑 Mueblería Jota — E-Commerce Web
+# Mueblería Hermanos Jota
 
-> **Primera Entrega**: Desarrollo Frontend (Sprint 1)  
-> *Certificación Avanzada Full Stack Developer — ITBA*
+Catálogo web de mobiliario para **Hermanos Jota**. El frontend está en React y el backend en Express. El cliente pide los productos a la API, muestra el catálogo, permite ver el detalle de un ítem y simula un carrito con contador en el Navbar.
 
----
-
-## 📌 Sobre el Proyecto
-
-Bienvenido al repositorio de **Mueblería Jota**, un e-commerce enfocado en la exhibición y venta de mobiliario moderno. Esta primera entrega comprende el maquetado, estilizado e interactividad básica de la interfaz web, sentando las bases de la arquitectura cliente/servidor que se completará en etapas posteriores.
+Proyecto del grupo 06 — Certificación Avanzada Full Stack Developer (ITBA).
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Integrantes
 
-El proyecto está construido utilizando la **tríada fundamental de la Web**:
-
-* **HTML5 Semántico**: Para garantizar accesibilidad, estructura limpia y un correcto posicionamiento SEO.
-* **CSS3 Moderno**: Utilización de variables globales (*custom properties*), Flexbox/Grid para layouts adaptativos y diseño *Responsive Web Design*.
-* **JavaScript (ES6+)**: Manipulación interactiva del DOM, captura de eventos y lógica básica de la interfaz sin librerías externas.
-
----
-
-## ✨ Buenas Prácticas Aplicadas
-
-Para que el código sea limpio, mantenible y escalable, se implementaron las siguientes prácticas de la industria:
-
-1. **Separación de Responsabilidades (*Separation of Concerns*)**: Marcado (HTML), estilos (CSS) y comportamiento (JS) completamente desacoplados.
-2. **Nomenclatura y Convenciones**:
-   * Uso de **kebab-case** en archivos y clases CSS para consistencia cross-platform.
-   * Uso de **camelCase** en variables y funciones de JavaScript.
-3. **Optimización de Recursos**: Estructura modular de archivos para una carga eficiente y clara legibilidad.
-4. **Control de Versiones**: Commits frecuentes en Git siguiendo la convención de mensajes claros y descriptivos.
-
----
-
-
-## 🎨 Diseño desde el comienzo
-
-Pensamos en como hermanos jota es una empresa que viene trabajando, diseñando y acompañando a todos sus compradores en los momentos mas intimos y familiares. Respetamos el tono calido de la voz de marca y la expresamos en el diseño
-Tambien se realizo el diseño ux/ui desde cero. Ampliamos el manual para que la marca de hermanos jota se pueda adaptar bien a medios digitales. Se amplio el design system, usos mas eficientes y visuales de las tipografias.Correcion de colores para cumplir con contraste accesible WCAG 2.1. Tambien se hizo un diseño preliminar en figma. Prototipo interactivo 
-https://www.figma.com/proto/3oMkep0m5kplNLqEjuTJ7N/Web-hermanos-jota?page-id=2%3A2&node-id=22-2&viewport=416%2C209%2C0.05&t=5G1P4IEsLA5znvEx-8&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=22%3A2&hide-ui=1
-
-Ademas pensando en como comunican se agregaron 2 secciones no codeadas como "coleccion jota 2026" inspirada en el manual y catalogo compartido. Tambien se penso en una arquitectura que impulse las caracteristicas de "premium" y "familiar" añadiendo una sección "nosotros"
-
-## 📂 Estructura del Repositorio
-
-```text
-muebleria-jota/
-│
-├── assets/                    # Recursos estáticos
-│   ├── images/                # Fotografías y banners
-│   └── icons/                 # Íconos vectoriales (.svg)
-│
-├── video/                     # Video del hero de la home
-│
-├── css/                       # Hojas de estilo en cascada
-│   ├── base.css               # Reset, tokens, header/nav y footer (compartido)
-│   ├── styles.css             # Estilos de la home
-│   ├── products-view.css      # Estilos del catálogo
-│   ├── product-detail.css     # Estilos del detalle de producto
-│   └── contacto.css           # Estilos del formulario de contacto
-│
-├── js/                        # Lógica y scripts de JavaScript
-│   ├── script.js               # Menú mobile (hamburguesa), compartido
-│   ├── toast.js                 # Notificaciones flotantes, compartido
-│   ├── productos-data.js        # Array de objetos con los productos + helpers
-│   ├── main.js                  # Home: renderizado dinámico de destacados
-│   ├── catalog.js               # Catálogo: renderizado dinámico de la grilla
-│   ├── product-detail.js        # Detalle: renderizado dinámico por id de la URL
-│   ├── cart.js                  # Carrito simulado (localStorage + contador)
-│   └── contacto.js              # Validación del formulario de contacto
-│
-├── pages/                     # Páginas secundarias del sitio
-│   ├── products-view.html     # Catálogo general
-│   ├── product-detail.html    # Detalle / Ficha de producto
-│   └── contacto.html          # Formulario y datos de contacto
-│
-├── index.html                 # Punto de entrada principal (Landing/Home)
-└── README.md                  # Documentación del repositorio
-```
-
----
-
-## 👥 Integrantes
-
-<!-- TODO: reemplazar por el nombre completo y el link de perfil de GitHub de cada uno -->
-
-| Nombre | Usuario de GitHub |
+| Nombre | GitHub |
 |---|---|
 | Ivan Rosendo | [@ivanros02](https://github.com/ivanros02) |
 | Pozuelo María Leal | [@mlealpozuelo](https://github.com/mlealpozuelo) |
@@ -96,6 +18,138 @@ muebleria-jota/
 
 ---
 
-## 🌐 Demo
+## Requisitos
 
-🔗 _Sitio desplegado en: https://mueblesjotagrupo06.netlify.app
+- [Node.js](https://nodejs.org/) (LTS recomendado) y npm
+- Dos terminales (hay que levantar **los dos** servidores)
+
+Puertos:
+
+| Servidor | Carpeta | URL |
+|---|---|---|
+| Backend (Express) | `backend/` | http://localhost:3001 |
+| Frontend (Vite + React) | `client/` | http://localhost:5173 |
+
+---
+
+## Instalación y ejecución
+
+Clonar el repositorio y entrar a la carpeta del proyecto:
+
+```bash
+git clone <url-del-repo>
+cd muebleria-jota-feature-catalogo-react
+```
+
+*(Si la carpeta del repo tiene otro nombre, usá esa.)*
+
+### 1. Backend
+
+En una terminal:
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+Deberías ver algo como: `Servidor backend escuchando en http://localhost:3001`.
+
+Comprobar la API:
+
+- http://localhost:3001/
+- http://localhost:3001/api/products
+
+### 2. Frontend
+
+En **otra** terminal:
+
+```bash
+cd client
+npm install
+npm run dev
+```
+
+Abrir http://localhost:5173/
+
+Si el frontend arranca pero el catálogo no carga, el backend no está corriendo: `ProductList` pide `http://localhost:3001/api/products`.
+
+---
+
+## Arquitectura
+
+El repo está separado en dos aplicaciones que se hablan por HTTP:
+
+```text
+muebleria-jota/
+├── backend/                 # API Express (puerto 3001)
+│   ├── server.js            # Arranca el servidor
+│   ├── app.js               # Express, CORS, middlewares y rutas
+│   ├── DatosProductos.js    # Datos de productos
+│   ├── routes/              # Rutas (qué URL existe)
+│   ├── controllers/         # Lógica de cada endpoint
+│   └── middleware/          # Logger, 404 y errores
+│
+└── client/                  # SPA React + Vite (puerto 5173)
+    └── src/
+        ├── App.jsx          # Rutas, producto seleccionado y carrito
+        ├── pages/           # Home (catálogo) y Contacto
+        ├── components/      # Navbar, ProductList, ProductCard, detalle, etc.
+        └── assets/images/   # Fotos de los muebles
+```
+
+### Backend
+
+- Express arma la API. Las rutas de productos están en `/api/products`.
+- Los controladores leen `DatosProductos.js` y responden JSON.
+- Hay middlewares de log, de ruta no encontrada y de errores.
+- CORS está activo para que el frontend en el puerto 5173 pueda llamar al 3001.
+
+### Frontend
+
+- **Vite + React** para la interfaz.
+- **React Router** para `/`, `/productos` y `/contacto`.
+- **CSS Modules** por componente, más variables de marca en `App.css`.
+- `ProductList` pide los productos al backend con `fetch`.
+- Las imágenes se resuelven en el cliente con el nombre de archivo que manda la API (`sofa-patagonia.png`, etc.).
+
+### Flujo del catálogo y el carrito
+
+1. `App.jsx` guarda el producto elegido (`selectedProduct`) y el carrito (`cart`).
+2. `ProductCard` avisa a App cuando el usuario hace clic en un mueble.
+3. `Home` muestra el detalle (nombre, imagen, descripción, precio) y los botones **Agregar al carrito** / **Quitar del carrito**.
+4. App actualiza el array `cart` y le pasa al Navbar `cartCount={cart.length}`.
+5. El Navbar **no calcula** el número: solo lo muestra por props.
+
+```text
+App (estado)
+ ├── Navbar (cartCount)
+ └── Home
+      ├── ProductDetail (agregar / quitar)
+      └── ProductList → ProductCard (seleccionar)
+```
+
+---
+
+## Decisiones
+
+- **Dos servidores, no un solo proyecto.** El catálogo no está hardcodeado en React: sale de la API. Así el frontend y el backend se pueden cambiar por separado.
+- **Estado arriba, en `App`.** El Navbar y el detalle necesitan el mismo carrito. Si el carrito viviera solo en Home, el contador del menú no se enteraría. Por eso App es el dueño del estado y baja funciones y datos por props.
+- **Navbar por props.** Ya recibía `cartCount`. No se duplicó lógica ahí: App le manda `cart.length`.
+- **Carrito en memoria (`useState`).** Alcanza para esta entrega. No se usó `localStorage` ni una API de carrito: recargar la página lo vacía.
+- **Detalle ligado al catálogo.** El detalle se muestra cuando hay un producto seleccionado, en la misma vista del listado. No hace falta una ruta extra para cumplir Agregar / Quitar.
+- **Misma lectura de campos que las cards.** El backend usa `nombre`, `precio`, `imagen`; el cliente también acepta `name`, `price`, `image` por si el JSON cambia.
+- **CSS Modules.** Los estilos de cada pieza no se pisan entre archivos.
+- **CORS en Express.** Sin eso el navegador bloquea el `fetch` de 5173 a 3001.
+
+---
+
+## Scripts
+
+| Dónde | Comando | Qué hace |
+|---|---|---|
+| `backend/` | `npm start` | API en el puerto 3001 |
+| `backend/` | `npm run dev` | Igual, con recarga al guardar |
+| `client/` | `npm run dev` | Frontend en el puerto 5173 |
+| `client/` | `npm run build` | Build de producción |
+R
