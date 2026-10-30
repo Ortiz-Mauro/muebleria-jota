@@ -1,0 +1,54 @@
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 20px 3rem;
+}
+
+.title {
+  margin: 0 0 1.5rem;
+  color: var(--rust);
+  font-family: var(--font-serif);
+}
+
+.message,
+.errorBox {
+  max-width: 720px;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.message {
+  color: var(--muted);
+  background: var(--warm);
+}
+
+.errorBox {
+  color: var(--rust-dark);
+  background: color-mix(in srgb, var(--rust-light) 8%, white);
+}
+
+.retry {
+  cursor: pointer;
+  margin-top: 0.75rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--rust-dark);
+  font-weight: 700;
+}
+
+.retry:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 2px;
+}
+
+.success {
+  margin: 0 0 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--rust) 35%, white);
+  border-radius: 6px;
+  color: var(--rust-dark);
+  background: color-mix(in srgb, var(--rust) 8%, white);
+}

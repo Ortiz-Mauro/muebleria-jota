@@ -1,0 +1,32 @@
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 20px 3rem;
+}
+
+.title {
+  margin: 0 0 1.25rem;
+  color: var(--rust);
+  font-family: var(--font-serif);
+}
+
+.status,
+.error {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.status {
+  color: var(--muted);
+  background: var(--warm);
+}
+
+.error {
+  color: var(--rust-dark);
+  background: color-mix(in srgb, var(--rust-light) 8%, white);
+}
+
+.page a {
+  color: var(--rust);
+}

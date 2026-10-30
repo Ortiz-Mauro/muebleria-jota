@@ -1,0 +1,40 @@
+:root {
+  --cream: #fef9f3;
+  --sand: #f0e6d5;
+  --warm: #fdf5ea;
+  --rust: #8c3d2c;
+  --rust-light: #a04936;
+  --rust-dark: #6e2c1e;
+  --gold: #ce9d4f;
+  --dark: #1a0f0a;
+  --ink: #332d29;
+  --muted: #8b8075;
+  --border: #e0d0b8;
+
+  --font: 'Inter', system-ui, sans-serif;
+  --font-serif: Georgia, 'Times New Roman', serif;
+  --font-display: 'Lora', Georgia, serif;
+
+  --max-width: 1280px;
+  --header-h: 74px;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--dark);
+  font-family: var(--font);
+}
+
+/* ============================================================
+   Layout Global Flexbox
+   ============================================================ */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}

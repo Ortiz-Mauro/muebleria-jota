@@ -1,0 +1,23 @@
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 20px;
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 0.75rem;
+  color: var(--rust);
+  font-family: var(--font-serif);
+}
+
+.text {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.link {
+  color: var(--rust);
+  font-weight: 700;
+}

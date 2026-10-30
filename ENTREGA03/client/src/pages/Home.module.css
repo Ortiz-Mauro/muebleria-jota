@@ -1,0 +1,130 @@
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 20px 3rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem 0 2.5rem;
+}
+
+.heroImage {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.kicker {
+  margin: 0 0 0.6rem;
+  color: var(--gold);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 0.85rem;
+  color: var(--rust);
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.lead {
+  max-width: 42rem;
+  margin: 0 0 1.4rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.primaryLink,
+.secondaryLink {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.primaryLink {
+  background: var(--rust);
+  color: #fff;
+}
+
+.secondaryLink {
+  border: 1px solid var(--border);
+  color: var(--rust-dark);
+}
+
+.sectionTitle {
+  margin: 0 0 1.2rem;
+  color: var(--rust);
+  font-family: var(--font-serif);
+}
+
+.status,
+.statusError {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.status {
+  color: var(--muted);
+  background: var(--warm);
+}
+
+.statusError,
+.errorBox {
+  color: var(--rust-dark);
+  background: color-mix(in srgb, var(--rust-light) 8%, white);
+}
+
+.errorBox {
+  max-width: 720px;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.retry {
+  cursor: pointer;
+  margin-top: 0.75rem;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--rust-dark);
+  font-weight: 700;
+}
+
+.retry:focus-visible,
+.primaryLink:focus-visible,
+.secondaryLink:focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 2px;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .heroImage {
+    height: 220px;
+    order: -1;
+  }
+}

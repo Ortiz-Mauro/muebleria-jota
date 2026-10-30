@@ -1,0 +1,58 @@
+@baseUrl = http://localhost:3001
+@productoId = REEMPLAZAR_CON_UN_ID_REAL
+
+### Health check
+GET {{baseUrl}}/
+
+### Listar productos
+GET {{baseUrl}}/api/productos
+
+### Listar productos destacados
+GET {{baseUrl}}/api/productos?destacado=true
+
+### Listar por categoría
+GET {{baseUrl}}/api/productos?categoria=Living
+
+### Obtener un producto
+GET {{baseUrl}}/api/productos/{{productoId}}
+
+### Crear producto
+POST {{baseUrl}}/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Mesa auxiliar Iguazú",
+  "descripcion": "Mesa baja de madera para living.",
+  "precio": 210000,
+  "stock": 6,
+  "imagenUrl": "mesa-de-centro-araucaria.png",
+  "categoria": "Living",
+  "destacado": false,
+  "alt": "Mesa auxiliar de madera clara"
+}
+
+### Actualizar producto
+PUT {{baseUrl}}/api/productos/{{productoId}}
+Content-Type: application/json
+
+{
+  "precio": 225000,
+  "stock": 4
+}
+
+### Eliminar producto
+DELETE {{baseUrl}}/api/productos/{{productoId}}
+
+### Error: ID inválido
+GET {{baseUrl}}/api/productos/abc123
+
+### Error: producto inexistente
+GET {{baseUrl}}/api/productos/000000000000000000000000
+
+### Error: POST sin nombre ni precio
+POST {{baseUrl}}/api/productos
+Content-Type: application/json
+
+{
+  "descripcion": "Falta nombre y precio"
+}
