@@ -1,90 +1,196 @@
-# 🪑 Mueblería Jota — E-Commerce Web
+# Mueblería Hermanos Jota
 
-> **Primera Entrega**: Desarrollo Frontend (Sprint 1)  
-> *Certificación Avanzada Full Stack Developer — ITBA*
+Catálogo y administración de productos para **Hermanos Jota**. El frontend es una SPA en React y el backend una API REST en Express con persistencia en MongoDB.
 
----
-
-## 📌 Sobre el Proyecto
-
-Bienvenido al repositorio de **Mueblería Jota**, un e-commerce enfocado en la exhibición y venta de mobiliario moderno. Esta primera entrega comprende el maquetado, estilizado e interactividad básica de la interfaz web, sentando las bases de la arquitectura cliente/servidor que se completará en etapas posteriores.
-
-🔗 Repositorio: https://github.com/Ortiz-Mauro/muebleria-jota
-Código fuente del proyecto (HTML, CSS y JS).
-
-🌐 Versión 01 funcional: https://grupo06hermanosj.netlify.app/
-Enfocada en la propuesta estética y de diseño del sitio (home, estilos, identidad de marca).Mas elementos
-
-
-🌐 Versión 02 diseño: https://mueblesjotagrupo06.netlify.app/
-
+Proyecto del Grupo 06 — Certificación Avanzada Full Stack Developer (ITBA).  
+**Sprint 5 y 6: Persistencia de datos y CRUD completo.**
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Integrantes
 
-El proyecto está construido utilizando la **tríada fundamental de la Web**:
-
-* **HTML5 Semántico**: Para garantizar accesibilidad, estructura limpia y un correcto posicionamiento SEO.
-* **CSS3 Moderno**: Utilización de variables globales (*custom properties*), Flexbox/Grid para layouts adaptativos y diseño *Responsive Web Design*.
-* **JavaScript (ES6+)**: Manipulación interactiva del DOM, captura de eventos y lógica básica de la interfaz sin librerías externas.
-
----
-
-## ✨ Buenas Prácticas Aplicadas
-
-Para que el código sea limpio, mantenible y escalable, se implementaron las siguientes prácticas de la industria:
-
-1. **Separación de Responsabilidades (*Separation of Concerns*)**: Marcado (HTML), estilos (CSS) y comportamiento (JS) completamente desacoplados.
-2. **Nomenclatura y Convenciones**:
-   * Uso de **kebab-case** en archivos y clases CSS para consistencia cross-platform.
-   * Uso de **camelCase** en variables y funciones de JavaScript.
-3. **Optimización de Recursos**: Estructura modular de archivos para una carga eficiente y clara legibilidad.
-4. **Control de Versiones**: Commits frecuentes en Git siguiendo la convención de mensajes claros y descriptivos.
+| Nombre | GitHub |
+|---|---|
+| Ivan Rosendo | [@ivanros02](https://github.com/ivanros02) |
+| Pozuelo María Leal | [@mlealpozuelo](https://github.com/mlealpozuelo) |
+| Ortiz Mauro | [@ortiz-mauro](https://github.com/ortiz-mauro) |
+| Ricartes Pedro Leonel | [@ricartes123](https://github.com/ricartes123) |
+| Arrueta Rolando | [@rolo-arrueta](https://github.com/rolo-arrueta) |
 
 ---
 
+## Stack Tecnológico
 
-## 🎨 Diseño desde el comienzo
+- **Frontend:** React 19, Vite, React Router 7, CSS Modules
+- **Backend:** Node.js, Express 5, Mongoose, MongoDB
+- **Gestor de paquetes:** pnpm
 
-Pensamos en como hermanos jota es una empresa que viene trabajando, diseñando y acompañando a todos sus compradores en los momentos mas intimos y familiares. Respetamos el tono calido de la voz de marca y la expresamos en el diseño
-Tambien se realizo el diseño ux/ui desde cero. Ampliamos el manual para que la marca de hermanos jota se pueda adaptar bien a medios digitales. Se amplio el design system, usos mas eficientes y visuales de las tipografias.Correcion de colores para cumplir con contraste accesible WCAG 2.1. Tambien se hizo un diseño preliminar en figma. Prototipo interactivo 
-https://www.figma.com/proto/3oMkep0m5kplNLqEjuTJ7N/Web-hermanos-jota?page-id=2%3A2&node-id=22-2&viewport=416%2C209%2C0.05&t=5G1P4IEsLA5znvEx-8&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=22%3A2&hide-ui=1
+---
 
-Ademas pensando en como comunican se agregaron 2 secciones no codeadas como "coleccion jota 2026" inspirada en el manual y catalogo compartido. Tambien se penso en una arquitectura que impulse las caracteristicas de "premium" y "familiar" añadiendo una sección "nosotros"
-
-## 📂 Estructura del Repositorio
+## Estructura del Monorepo
 
 ```text
 muebleria-jota/
-│
-├── assets/                    # Recursos estáticos
-│   ├── images/                # Fotografías y banners
-│   ├── icons/                 # Íconos vectoriales (.svg)
-│   └── fonts/                 # Tipografías locales (si aplica)
-│
-├── css/                             # Hojas de estilo en cascada unific
-│   ├── Base.css                     # Compartido por TODAS las páginas: reset, tokens,header/nav,footer y toast. 
-│   ├── producto-detail.css          # DETALLE DE PRODUCTO (product-detail.html)
-│   └── contacto.css                 # formulario
-│   ├── products-view.css            # CATÁLOGO (products-view.html)
-│   └── styles.css                   # HOME (index.html)
-│
-├── js/                        # Lógica y scripts de JavaScript
-│   └── cart.js
-│    └── catalogo.js    
-│    └── contacto.js
-│    └── detalle.js
-│    └── main.js    
-│    └──productos-data.js
-     └── productos.js    
-│    └── script.js
-│    └── toast.js
-│  
-├── pages/                     # Páginas secundarias del sitio
-│   ├── productos.html         # Catálogo general
-│   ├── producto.html          # Detalle / Ficha de producto
-│   └── contacto.html          # Formulario y datos de contacto
-├── Video                      # Video (diseñado por equipo 06)
-├── index.html                 # Punto de entrada principal (Landing/Home)
-└── README.md                  # Documentación del repositorio
+├── .gitignore
+├── README.md
+├── backend/
+│   ├── config/db.js
+│   ├── controllers/products.controller.js
+│   ├── docs/products.http
+│   ├── middleware/
+│   ├── models/Product.js
+│   ├── routes/products.routes.js
+│   ├── scripts/seed.js
+│   ├── services/products.service.js
+│   ├── .env.example
+│   ├── package.json
+│   └── server.js
+└── client/
+    ├── public/
+    │   └── _redirects
+    ├── src/
+    │   ├── assets/
+    │   ├── components/            # Folder-per-Component (JSX, CSS Module, index.js)
+    │   ├── pages/                 # Páginas modulares (JSX, CSS Module, index.js)
+    │   ├── services/api.js
+    │   ├── App.jsx
+    │   └── main.jsx
+    ├── .env.example
+    ├── package.json
+    ├── vercel.json
+    └── vite.config.js
+```
+
+---
+
+## Variables de Entorno
+
+Antes de iniciar la aplicación en local o en producción, es necesario configurar los archivos `.env` a partir de los ejemplos provistos.
+
+### Backend (`backend/.env`)
+
+Basado en `backend/.env.example`:
+
+| Variable | Ejemplo | Descripción |
+|---|---|---|
+| `PORT` | `3001` | Puerto del servidor API |
+| `MONGODB_URI` | `mongodb+srv://<usuario>:<password>@cluster0.mongodb.net/muebleria-jota?retryWrites=true&w=majority` | Cadena de conexión a MongoDB Atlas |
+| `CORS_ORIGIN` | `http://localhost:5173` | Orígenes permitidos (separados por coma) |
+
+### Client (`client/.env`)
+
+Basado en `client/.env.example`:
+
+| Variable | Ejemplo | Descripción |
+|---|---|---|
+| `VITE_API_URL` | `http://localhost:3001` | URL base de la API backend |
+
+> **Nota de seguridad:** Nunca subas archivos `.env` con credenciales reales al repositorio. Están excluidos mediante el archivo `.gitignore`.
+
+---
+
+## Instalación y Ejecución Local
+
+Requisitos previos:
+- Node.js (v18 o superior)
+- pnpm (`npm install -g pnpm`)
+- Instancia de MongoDB (local o MongoDB Atlas)
+
+```bash
+git clone <url-del-repositorio>
+cd muebleria-jota
+```
+
+### 1. Backend
+
+```bash
+cd backend
+cp .env.example .env
+# Editar .env con la URI de MongoDB correspondiente
+pnpm install
+pnpm run seed
+pnpm run dev
+```
+
+El servidor quedará escuchando en `http://localhost:3001`.
+
+### 2. Frontend
+
+En otra terminal:
+
+```bash
+cd client
+cp .env.example .env
+pnpm install
+pnpm run dev
+```
+
+La aplicación cliente quedará disponible en `http://localhost:5173`.
+
+---
+
+## Carga Inicial de Datos (Seed)
+
+Desde la carpeta `backend/`:
+
+```bash
+pnpm run seed
+```
+
+El script limpia la colección `products` e inserta los 11 productos iniciales con stock y categorías asignadas.
+
+---
+
+## Endpoints de la API REST
+
+Base URL: `http://localhost:3001`
+
+- **GET `/`**: Health check general de la API.
+- **GET `/api/productos`**: Lista completa de productos (soporta filtros por query: `?categoria=Living&destacado=true`).
+- **GET `/api/productos/:id`**: Detalle de un producto por su `_id` de Mongo. Responde `200` o `404` si no existe.
+- **POST `/api/productos`**: Crea un nuevo producto. Responde con status **`201 Created`**.
+- **PUT `/api/productos/:id`**: Actualiza datos de un producto existente con validación de schema. Responde `200`.
+- **DELETE `/api/productos/:id`**: Elimina un producto por su ID. Responde `200`.
+
+Colección de pruebas manuales HTTP disponible en `backend/docs/products.http`.
+
+---
+
+## Configuración de Deploy
+
+### Backend (Render)
+- **Root Directory:** `backend`
+- **Build Command:** `pnpm install`
+- **Start Command:** `pnpm start` (o `node server.js`)
+- **Variables de Entorno requeridas:** `PORT`, `MONGODB_URI`, `CORS_ORIGIN` (con la URL del frontend desplegado).
+
+### Frontend (Vercel / Netlify)
+- **Root Directory:** `client`
+- **Build Command:** `pnpm run build`
+- **Output Directory:** `dist`
+- **Variable de Entorno requerida:** `VITE_API_URL` (con la URL del backend en Render).
+- **Soporte SPA:** Configurado en `client/vercel.json` y `client/public/_redirects`.
+
+---
+
+## Links de Deploy
+
+### Frontend Desplegado
+- **URL:** `<COLOCAR_AQUI_LINK_DEPLOY_FRONTEND>`
+
+### Backend Desplegado
+- **URL:** `<COLOCAR_AQUI_LINK_DEPLOY_BACKEND>`
+
+---
+
+## Scripts Disponibles
+
+| Directorio | Comando | Descripción |
+|---|---|---|
+| `backend/` | `pnpm start` | Inicia el servidor backend en producción |
+| `backend/` | `pnpm run dev` | Inicia el servidor en modo desarrollo (`--watch`) |
+| `backend/` | `pnpm run seed` | Ejecuta el script de carga de productos |
+| `client/` | `pnpm run dev` | Inicia el servidor de desarrollo de Vite |
+| `client/` | `pnpm run build` | Compila la aplicación React para producción |
+| `client/` | `pnpm run preview` | Previsualiza el build de producción en local |
+| `client/` | `pnpm run lint` | Ejecuta linter con Oxlint |
