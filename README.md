@@ -176,10 +176,10 @@ Colección de pruebas manuales HTTP disponible en `backend/docs/products.http`.
 ## Links de Deploy
 
 ### Frontend Desplegado
-- **URL:** `<COLOCAR_AQUI_LINK_DEPLOY_FRONTEND>`
+- **URL:** `https://regal-bombolone-9f4af7.netlify.app/`
 
 ### Backend Desplegado
-- **URL:** `<COLOCAR_AQUI_LINK_DEPLOY_BACKEND>`
+- **URL:** `https://muebleria-jota-backend.onrender.com/`
 
 ---
 
