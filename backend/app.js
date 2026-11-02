@@ -11,7 +11,7 @@ const origenPorDefecto =
 
 const origenesPermitidos = (process.env.CORS_ORIGIN || origenPorDefecto)
   .split(",")
-  .map((origen) => origen.trim())
+  .map((origen) => origen.trim().replace(/\/+$/, ""))
   .filter(Boolean);
 
 app.use(

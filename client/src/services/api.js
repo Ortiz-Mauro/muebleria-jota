@@ -1,4 +1,10 @@
-const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:3001').replace(
+// En producción, si VITE_API_URL no está definida en el hosting, se usa el
+// backend desplegado en Render. En desarrollo se usa el backend local.
+const API_URL_POR_DEFECTO = import.meta.env.PROD
+  ? 'https://muebleria-jota-backend.onrender.com'
+  : 'http://localhost:3001';
+
+const API_URL = (import.meta.env.VITE_API_URL || API_URL_POR_DEFECTO).replace(
   /\/$/,
   ''
 );
@@ -10,7 +16,7 @@ async function request(path, options = {}) {
     response = await fetch(`${API_URL}${path}`, {
       headers: {
         'Content-Type': 'application/json',
-        ...(options.headers || {}),
+        ...options.headers,
       },
       ...options,
     });

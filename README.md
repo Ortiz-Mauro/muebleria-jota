@@ -23,7 +23,9 @@ Proyecto del Grupo 06 — Certificación Avanzada Full Stack Developer (ITBA).
 
 - **Frontend:** React 19, Vite, React Router 7, CSS Modules
 - **Backend:** Node.js, Express 5, Mongoose, MongoDB
-- **Gestor de paquetes:** pnpm
+- **Base de datos:** MongoDB Atlas
+- **Gestor de paquetes:** pnpm (también funciona con npm; ambos lockfiles están versionados)
+- **Deploy:** Netlify (frontend) y Render (backend)
 
 ---
 
@@ -73,9 +75,9 @@ Basado en `backend/.env.example`:
 
 | Variable | Ejemplo | Descripción |
 |---|---|---|
-| `PORT` | `3001` | Puerto del servidor API |
+| `PORT` | `3001` | Puerto del servidor API (en Render lo asigna la plataforma) |
 | `MONGODB_URI` | `mongodb+srv://<usuario>:<password>@cluster0.mongodb.net/muebleria-jota?retryWrites=true&w=majority` | Cadena de conexión a MongoDB Atlas |
-| `CORS_ORIGIN` | `http://localhost:5173` | Orígenes permitidos (separados por coma) |
+| `CORS_ORIGIN` | `http://localhost:5173` | Orígenes permitidos (separados por coma, sin `/` final). En producción: `https://regal-bombolone-9f4af7.netlify.app` |
 
 ### Client (`client/.env`)
 
@@ -83,7 +85,7 @@ Basado en `client/.env.example`:
 
 | Variable | Ejemplo | Descripción |
 |---|---|---|
-| `VITE_API_URL` | `http://localhost:3001` | URL base de la API backend |
+| `VITE_API_URL` | `http://localhost:3001` | URL base de la API backend. En producción: `https://muebleria-jota-backend.onrender.com` |
 
 > **Nota de seguridad:** Nunca subas archivos `.env` con credenciales reales al repositorio. Están excluidos mediante el archivo `.gitignore`.
 
@@ -137,13 +139,15 @@ Desde la carpeta `backend/`:
 pnpm run seed
 ```
 
+> **Atención:** el script es destructivo. No ejecutarlo contra la base de producción sin acordarlo con el equipo.
+
 El script limpia la colección `products` e inserta los 11 productos iniciales con stock y categorías asignadas.
 
 ---
 
 ## Endpoints de la API REST
 
-Base URL: `http://localhost:3001`
+Base URL local: `http://localhost:3001` · Producción: `https://muebleria-jota-backend.onrender.com`
 
 - **GET `/`**: Health check general de la API.
 - **GET `/api/productos`**: Lista completa de productos (soporta filtros por query: `?categoria=Living&destacado=true`).
@@ -159,27 +163,45 @@ Colección de pruebas manuales HTTP disponible en `backend/docs/products.http`.
 ## Configuración de Deploy
 
 ### Backend (Render)
-- **Root Directory:** `backend`
-- **Build Command:** `pnpm install`
+- **Tipo:** Web Service, **Root Directory:** `backend`
+- **Build Command:** `pnpm install` (o `npm install`)
 - **Start Command:** `pnpm start` (o `node server.js`)
-- **Variables de Entorno requeridas:** `PORT`, `MONGODB_URI`, `CORS_ORIGIN` (con la URL del frontend desplegado).
+- **Variables de entorno:**
 
-### Frontend (Vercel / Netlify)
-- **Root Directory:** `client`
-- **Build Command:** `pnpm run build`
-- **Output Directory:** `dist`
-- **Variable de Entorno requerida:** `VITE_API_URL` (con la URL del backend en Render).
-- **Soporte SPA:** Configurado en `client/vercel.json` y `client/public/_redirects`.
+| Variable | Valor en producción |
+|---|---|
+| `MONGODB_URI` | Cadena de conexión privada de MongoDB Atlas (cargarla solo en el panel de Render, nunca en el repo) |
+| `CORS_ORIGIN` | `https://regal-bombolone-9f4af7.netlify.app` (sin `/` final) |
+| `PORT` | Lo asigna Render automáticamente; no hace falta definirlo |
+
+- En MongoDB Atlas, **Network Access** debe permitir las IPs de Render (por ejemplo `0.0.0.0/0`).
+
+### Frontend (Netlify)
+- **Base directory:** `client`
+- **Build Command:** `pnpm run build` (o `npm run build`)
+- **Publish directory:** `dist`
+- **Variable de entorno (Site configuration → Environment variables):**
+
+| Variable | Valor en producción |
+|---|---|
+| `VITE_API_URL` | `https://muebleria-jota-backend.onrender.com` |
+
+- Vite incorpora `VITE_API_URL` **en tiempo de build**: después de crearla o modificarla hay que volver a desplegar (*Trigger deploy → Clear cache and deploy site*).
+- Como respaldo, si `VITE_API_URL` no está definida en un build de producción, el cliente usa `https://muebleria-jota-backend.onrender.com`.
+- **Soporte SPA (recarga en rutas internas):** `client/public/_redirects` (Netlify) y `client/vercel.json` (Vercel).
 
 ---
 
 ## Links de Deploy
 
-### Frontend Desplegado
-- **URL:** `https://regal-bombolone-9f4af7.netlify.app/`
+| Recurso | URL |
+|---|---|
+| Repositorio GitHub | https://github.com/Ortiz-Mauro/muebleria-jota |
+| Frontend (Netlify) | https://regal-bombolone-9f4af7.netlify.app/ |
+| Backend (Render) | https://muebleria-jota-backend.onrender.com/ |
+| Endpoint de productos | https://muebleria-jota-backend.onrender.com/api/productos |
 
-### Backend Desplegado
-- **URL:** `https://muebleria-jota-backend.onrender.com/`
+> El backend usa el plan gratuito de Render: tras un período de inactividad la primera request puede tardar ~20-60 segundos en responder (arranque en frío).
 
 ---
 
